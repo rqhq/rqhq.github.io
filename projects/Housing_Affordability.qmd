@@ -1,0 +1,61 @@
+---
+title: "PA Housing Affordability — Capstone Project"
+description: "Forecasting housing affordability across Pennsylvania's Philadelphia, Pittsburgh, and Harrisburg metros through 2028 using ARIMA and XGBoost."
+date: "2025-04-25"
+categories: [time-series, forecasting, real-estate]
+image: ../images/housing-affordability-thumb.png
+image-alt: "Bar chart of 2028 projected affordability ratios across PA counties"
+format:
+  html:
+    code-fold: true
+    code-tools: true
+---
+
+## Overview
+
+Senior capstone project at the University of Pittsburgh, completed April 2025 with my partner Colton Dumm. The question we set out to answer: **where in Pennsylvania can a young buyer actually afford to live in 2028?**
+
+We built an integrated dataset combining Redfin's monthly housing market data with the U.S. Census Bureau's American Community Survey at the county level (2012–2023), focused on the three big PA metros (Philadelphia, Pittsburgh, Harrisburg), and forecast affordability through 2028 with two complementary models:
+
+- **ARIMA** to capture temporal patterns and seasonality in median sale price.
+- **XGBoost** to incorporate the broader socioeconomic features (education, population, income, marriage and poverty rates) that ARIMA can't ingest.
+
+The primary metric is the **affordability ratio** — median sale price ÷ median household income. Lower is more affordable. PA lawmakers have informally floated a "3× rule" as a target: median home price should be roughly three times median household income.
+
+## Tech stack
+
+R / tidyverse / forecast / xgboost / ggplot2
+
+## Research paper
+
+<iframe src="../pdfs/Housing-Affordability-Paper.pdf" width="100%" height="650px" style="border: 1px solid #ccc;"></iframe>
+
+[Download paper](../pdfs/Housing-Affordability-Paper.pdf)
+
+## Presentation
+
+50-slide deck walking through EDA, methods, and results in more visual detail than the paper.
+
+[View 50-slide deck →](../pdfs/Housing-Affordability-Slides.pdf)
+
+## Key findings
+
+**Pittsburgh metro is on track to remain the most accessible of PA's three big metros through 2028; Philadelphia the least.**
+
+| Metro        | 2028 affordability ratio | Trajectory       |
+|--------------|------------------------:|------------------|
+| Pittsburgh   | **2.76**                | mostly improving |
+| Harrisburg   | 3.18                    | mixed            |
+| Philadelphia | 3.76                    | mostly worsening |
+
+**Most affordable county in each metro (2028 forecast):**
+
+- **Pittsburgh** — Westmoreland County (2.50)
+- **Harrisburg** — Perry County (2.07)
+- **Philadelphia** — Delaware County (3.21)
+
+**Worst affordability in 2028** — all in the Philadelphia metro: Chester (4.07), Bucks (3.96), Philadelphia (3.84), Montgomery (3.61).
+
+**What actually drives the ratio.** XGBoost's top three features were median price per square foot, share of population with a bachelor's degree, and total population — i.e., the dense, educated areas are the expensive ones. At the extremes, social factors moved together: Chester County (richest in PA) had the highest marriage rate, lowest poverty rate, and highest education rate; Forest County was the inverse on every axis.
+
+**Method note.** XGBoost outperformed ARIMA on MAE and RMSE across most counties. The two models agreed on county rankings — except Philadelphia County, where they diverged sharply, suggesting that market is structurally hard to forecast (likely because of the big 2021–2023 correction the EDA flagged).
