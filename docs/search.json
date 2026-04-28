@@ -25,7 +25,7 @@
     "href": "projects/index.html",
     "title": "Projects",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nSong Popularity Machine Learning Final Project\n\n\n\nmachine-learning\n\nregression\n\n\n\nOne-line summary that appears on the project card.\n\n\n\nJan 15, 2026\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nSong Popularity Machine Learning Final Project\n\n\n\nmachine-learning\n\nregression\n\n\n\nPredicting Spotify song popularity across pop, rock, and jazz by comparing eight regression and tree-based models.\n\n\n\nApr 2, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -39,14 +39,14 @@
     "href": "projects/Song_popularity.html",
     "title": "Song Popularity Machine Learning Final Project",
     "section": "",
-    "text": "A short paragraph describing the problem, approach, and outcome."
+    "text": "Final project for Stat 1361 — Statistical Machine Learning at the University of Pittsburgh. Given 1,200 Spotify tracks split across pop, rock, and jazz with 15 audio features per track (danceability, energy, valence, tempo, acousticness, and others), the task was to predict each track’s popularity score on a 0–100 scale.\nI worked through the full modeling pipeline, exploratory data analysis, multicollinearity diagnostics, influential-point removal, variable-importance analysis, and a head-to-head comparison of eight regression and tree-based models. Then I refit the best model on the full training set to generate predictions for a 600-track test set."
   },
   {
     "objectID": "projects/Song_popularity.html#overview",
     "href": "projects/Song_popularity.html#overview",
     "title": "Song Popularity Machine Learning Final Project",
     "section": "",
-    "text": "A short paragraph describing the problem, approach, and outcome."
+    "text": "Final project for Stat 1361 — Statistical Machine Learning at the University of Pittsburgh. Given 1,200 Spotify tracks split across pop, rock, and jazz with 15 audio features per track (danceability, energy, valence, tempo, acousticness, and others), the task was to predict each track’s popularity score on a 0–100 scale.\nI worked through the full modeling pipeline, exploratory data analysis, multicollinearity diagnostics, influential-point removal, variable-importance analysis, and a head-to-head comparison of eight regression and tree-based models. Then I refit the best model on the full training set to generate predictions for a 600-track test set."
   },
   {
     "objectID": "projects/Song_popularity.html#links",
@@ -60,7 +60,7 @@
     "href": "projects/Song_popularity.html#tech-stack",
     "title": "Song Popularity Machine Learning Final Project",
     "section": "Tech stack",
-    "text": "Tech stack\nR / tidyverse / glmnet /randomForest / gbm"
+    "text": "Tech stack\nR / tidyverse / glmnet / randomForest / gbm"
   },
   {
     "objectID": "projects/Song_popularity.html#report",
@@ -74,6 +74,6 @@
     "href": "projects/Song_popularity.html#results",
     "title": "Song Popularity Machine Learning Final Project",
     "section": "Results",
-    "text": "Results\nKey findings, plots, takeaways."
+    "text": "Results\nBagging won, with a test MSE of 669 — a 23% improvement over the OLS baseline (869) and the lowest of any model tested:\n\n\n\nModel\nTest MSE\n\n\n\n\nBagging (mtry = 15)\n669\n\n\nBoosting\n828\n\n\nForward step-wise + GAM\n843\n\n\nLASSO\n867\n\n\nLinear regression\n869\n\n\nRidge regression\n869\n\n\nRegression tree\n880\n\n\nPruned regression tree\n938\n\n\n\nThree things stood out:\n\nGenre dominated. Pop tracks had a median popularity around 65; rock and jazz both clustered near 5. Track genre was the single most important predictor by a wide margin in every variable-importance plot.\nA handful of audio features did the rest. Duration, danceability, valence, and acousticness ranked next in random-forest importance. Mode, key, and time signature contributed almost nothing.\nPruning hurt. Cross-validation suggested a 5-leaf tree, but the pruned model performed worse than the unpruned tree (938 vs. 880). Variance reduction from bagging mattered more than tree-level interpretability for this problem."
   }
 ]

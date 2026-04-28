@@ -1,10 +1,10 @@
 ---
 title: "Song Popularity Machine Learning Final Project"
-description: "One-line summary that appears on the project card."
-date: "2026-01-15"
+description: "Predicting Spotify song popularity across pop, rock, and jazz by comparing eight regression and tree-based models."
+date: "2024-04-02"
 categories: [machine-learning, regression]
-image: ../images/project-thumb.png
-image-alt: "Thumbnail for this project"
+image: ../images/song-popularity-thumb.png
+image-alt: "Bar chart comparing test MSE across eight models, with bagging the lowest"
 format:
   html:
     code-fold: true
@@ -13,15 +13,13 @@ format:
 
 ## Overview
 
-A short paragraph describing the problem, approach, and outcome.
+Final project for *Stat 1361 — Statistical Machine Learning* at the University of Pittsburgh. Given 1,200 Spotify tracks split across pop, rock, and jazz with 15 audio features per track (danceability, energy, valence, tempo, acousticness, and others), the task was to predict each track's popularity score on a 0–100 scale.
 
-## Links
-
-- [GitHub repository](https://github.com/rqhq/REPO)
+I worked through the full modeling pipeline, exploratory data analysis, multicollinearity diagnostics, influential-point removal, variable-importance analysis, and a head-to-head comparison of eight regression and tree-based models. Then I refit the best model on the full training set to generate predictions for a 600-track test set.
 
 ## Tech stack
 
-R / tidyverse / glmnet /randomForest / gbm
+R / tidyverse / glmnet / randomForest / gbm
 
 ## Report
 
@@ -31,4 +29,21 @@ R / tidyverse / glmnet /randomForest / gbm
 
 ## Results
 
-Key findings, plots, takeaways.
+**Bagging won, with a test MSE of 669** — a 23% improvement over the OLS baseline (869) and the lowest of any model tested:
+
+| Model                       | Test MSE |
+|-----------------------------|---------:|
+| Bagging (mtry = 15)         |  **669** |
+| Boosting                    |      828 |
+| Forward step-wise + GAM     |      843 |
+| LASSO                       |      867 |
+| Linear regression           |      869 |
+| Ridge regression            |      869 |
+| Regression tree             |      880 |
+| Pruned regression tree      |      938 |
+
+Three things stood out:
+
+- **Genre dominated.** Pop tracks had a median popularity around 65; rock and jazz both clustered near 5. Track genre was the single most important predictor by a wide margin in every variable-importance plot.
+- **A handful of audio features did the rest.** Duration, danceability, valence, and acousticness ranked next in random-forest importance. Mode, key, and time signature contributed almost nothing.
+- **Pruning hurt.** Cross-validation suggested a 5-leaf tree, but the pruned model performed *worse* than the unpruned tree (938 vs. 880). Variance reduction from bagging mattered more than tree-level interpretability for this problem.
