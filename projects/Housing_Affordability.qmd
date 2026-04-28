@@ -36,7 +36,7 @@ R / tidyverse / forecast / xgboost / ggplot2
 
 50-slide deck walking through EDA, methods, and results in more visual detail than the paper.
 
-[View 50-slide deck →](../pdfs/Housing-Market-Capstone-Presentation.pdf.pdf)
+[View 50-slide deck →](../pdfs/Housing-Market-Capstone-Presentation.pdf)
 
 ## Key findings
 
