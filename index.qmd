@@ -3,6 +3,10 @@ title: "Ryan Quinlan"
 subtitle: "Data Science Portfolio"
 ---
 
-Hi — I'm Ryan. This site collects data science projects from my undergraduate and graduate work, spanning [TODO: a sentence on your areas of focus, e.g., NLP, applied ML, statistical modeling, time-series].
+Hi, I'm Ryan! I am a data scientist who specializes in transforming raw data into predictive models and actionable insights. I am pursuing my M.S. in Data Science at Drexel University, having earned my B.S. from the University of Pittsburgh in 2025. 
+
+This site collects data science projects from my undergraduate and graduate work, spanning applied ML, time series forecasting, statistical modeling, recommender systems, analytics dashboards, and data science pipelines.
+
+Currently, my main focus is designing a custom Spotify recommendation system and analytics dashboard. This project blends advanced algorithms with user-friendly visualizations to explore listening habits and personalized recommendations. My portfolio demonstrates my ability to apply these skills across diverse industries. I have built machine learning models to categorize premium pricing tiers for the Milwaukee Bucks and engineered time series forecasts for real estate markets. I am eager to tackle complex challenges using data-driven solutions.
 
 Browse the [projects](projects/index.qmd) page for writeups, code, reports, and notebooks. More [about me](about.qmd).
