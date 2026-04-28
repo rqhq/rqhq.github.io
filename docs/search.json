@@ -25,7 +25,7 @@
     "href": "projects/index.html",
     "title": "Projects",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\nNo matching items"
+    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nSong Popularity Machine Learning Final Project\n\n\n\nmachine-learning\n\nregression\n\n\n\nOne-line summary that appears on the project card.\n\n\n\nJan 15, 2026\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -33,5 +33,47 @@
     "title": "Ryan Quinlan",
     "section": "",
     "text": "Hi, I’m Ryan. This site collects data science projects from my undergraduate and graduate work, spanning applied machine learning tasks, time series forecasting, and statistical modeling to solve complex business problems\nBrowse the projects page for writeups, code, reports, and notebooks. More about me."
+  },
+  {
+    "objectID": "projects/Song_popularity.html",
+    "href": "projects/Song_popularity.html",
+    "title": "Song Popularity Machine Learning Final Project",
+    "section": "",
+    "text": "A short paragraph describing the problem, approach, and outcome."
+  },
+  {
+    "objectID": "projects/Song_popularity.html#overview",
+    "href": "projects/Song_popularity.html#overview",
+    "title": "Song Popularity Machine Learning Final Project",
+    "section": "",
+    "text": "A short paragraph describing the problem, approach, and outcome."
+  },
+  {
+    "objectID": "projects/Song_popularity.html#links",
+    "href": "projects/Song_popularity.html#links",
+    "title": "Song Popularity Machine Learning Final Project",
+    "section": "Links",
+    "text": "Links\n\nGitHub repository"
+  },
+  {
+    "objectID": "projects/Song_popularity.html#tech-stack",
+    "href": "projects/Song_popularity.html#tech-stack",
+    "title": "Song Popularity Machine Learning Final Project",
+    "section": "Tech stack",
+    "text": "Tech stack\nR / tidyverse / glmnet /randomForest / gbm"
+  },
+  {
+    "objectID": "projects/Song_popularity.html#report",
+    "href": "projects/Song_popularity.html#report",
+    "title": "Song Popularity Machine Learning Final Project",
+    "section": "Report",
+    "text": "Report\n\n\nDownload PDF"
+  },
+  {
+    "objectID": "projects/Song_popularity.html#results",
+    "href": "projects/Song_popularity.html#results",
+    "title": "Song Popularity Machine Learning Final Project",
+    "section": "Results",
+    "text": "Results\nKey findings, plots, takeaways."
   }
 ]

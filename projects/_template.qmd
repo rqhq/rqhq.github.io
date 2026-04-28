@@ -30,18 +30,23 @@ Python, scikit-learn, pandas, ...
 
 [Download PDF](../pdfs/PROJECT_REPORT.pdf)
 
-## Notebook
-
-```{=html}
-<!-- Option A: embed the entire rendered notebook inline -->
-```
-
-{{< embed ../notebooks/PROJECT_NOTEBOOK.ipynb echo=true >}}
-
 <!--
-Option B: link out to a standalone notebook page instead.
-Drop the .ipynb into notebooks/ and link directly:
-[Open notebook →](../notebooks/PROJECT_NOTEBOOK.ipynb)
+  ## Notebook
+
+  Two options for showing a notebook — pick ONE and uncomment the section
+  (move it outside this HTML comment block).
+
+  Option A — embed the rendered notebook inline:
+      {{</* embed ../notebooks/PROJECT_NOTEBOOK.ipynb echo=true */>}}
+      (remove the /* and */ to activate)
+
+  Option B — link out to the .ipynb so users can download/open it:
+      [Open notebook →](../notebooks/PROJECT_NOTEBOOK.ipynb)
+
+  IMPORTANT: in Quarto, the {{< ... >}} shortcode is processed BEFORE
+  HTML comments are stripped, so you can't just wrap it in <!-- --> to
+  disable it. Use the {{</* ... */>}} escape (as above) or delete the
+  line entirely. The build fails if the referenced .ipynb is missing.
 -->
 
 ## Results

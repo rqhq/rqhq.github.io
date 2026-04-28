@@ -25,18 +25,9 @@ R / tidyverse / glmnet /randomForest / gbm
 
 ## Report
 
-<iframe src="../pdfs/Song Popularity Final Project.pdf" width="100%" height="650px" style="border: 1px solid #ccc;"></iframe>
+<iframe src="../pdfs/Song-Popularity-Project.pdf" width="100%" height="650px" style="border: 1px solid #ccc;"></iframe>
 
-[Download PDF](../pdfs/Song%20Popularity%20Final%20Project.pdf)
-
-<!-- ## Notebook
-
-  No notebook for this project — original work was done in R Markdown
-  and is fully captured in the embedded PDF above. Delete this whole
-  block, or uncomment and point at a real .ipynb if you add one later.
-
-  {{< embed ../notebooks/PROJECT_NOTEBOOK.ipynb echo=true >}}
--->
+[Download PDF](../pdfs/Song-Popularity-Project.pdf)
 
 ## Results
 
