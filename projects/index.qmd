@@ -1,0 +1,16 @@
+---
+title: "Projects"
+listing:
+  contents:
+    - "*.qmd"
+    - "!index.qmd"
+  type: grid
+  grid-columns: 2
+  fields: [image, title, description, categories, date]
+  sort: "date desc"
+  categories: true
+  sort-ui: true
+  filter-ui: true
+  feed: false
+page-layout: full
+---

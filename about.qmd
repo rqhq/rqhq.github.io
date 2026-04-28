@@ -1,0 +1,12 @@
+---
+title: "About"
+---
+
+## About me
+
+[Write 2-3 paragraphs about your background, what you studied, what kinds of problems you like working on, and what you're up to now.]
+
+## Contact
+
+- **GitHub**: [@rqhq](https://github.com/rqhq)
+- **Email**: [rwquinlan@outlook.com](mailto:rwquinlan@outlook.com)

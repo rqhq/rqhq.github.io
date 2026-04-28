@@ -1,0 +1,49 @@
+project:
+  type: website
+  output-dir: docs
+  resources:
+    - "pdfs/"
+    - "notebooks/"
+
+execute:
+  freeze: true
+
+website:
+  title: "Ryan Quinlan"
+  description: "Ryan Quinlan — Data Science Portfolio"
+  navbar:
+    pinned: true
+    left:
+      - href: index.qmd
+        text: Home
+      - href: projects/index.qmd
+        text: Projects
+      - href: about.qmd
+        text: About
+    right:
+      - icon: github
+        href: https://github.com/rqhq
+        aria-label: GitHub
+      # TODO: replace with your LinkedIn URL, e.g. https://www.linkedin.com/in/yourhandle/
+      - icon: linkedin
+        href: https://www.linkedin.com/
+        aria-label: LinkedIn
+      - icon: envelope
+        href: mailto:rwquinlan@outlook.com
+        aria-label: Email
+  page-footer:
+    left: "© 2026 Ryan Quinlan"
+    right: "Built with [Quarto](https://quarto.org)"
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    css: styles.css
+    toc: true
+    toc-location: right
+    fontsize: 1rem
+    linestretch: 1.6
+    grid:
+      body-width: 850px

@@ -1,0 +1,23 @@
+/* Subtle polish on top of cosmo / darkly */
+
+.navbar-brand {
+  font-weight: 600;
+}
+
+.quarto-title .title {
+  font-weight: 600;
+}
+
+h1, h2, h3 {
+  letter-spacing: -0.01em;
+}
+
+.card,
+.quarto-listing-default .quarto-post {
+  border-radius: 6px;
+}
+
+/* A bit more breathing room on project cards */
+.quarto-grid-item {
+  padding: 0.5rem;
+}

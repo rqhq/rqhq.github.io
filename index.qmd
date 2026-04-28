@@ -1,0 +1,8 @@
+---
+title: "Ryan Quinlan"
+subtitle: "Data Science Portfolio"
+---
+
+Hi — I'm Ryan. This site collects data science projects from my undergraduate and graduate work, spanning [TODO: a sentence on your areas of focus, e.g., NLP, applied ML, statistical modeling, time-series].
+
+Browse the [projects](projects/index.qmd) page for writeups, code, reports, and notebooks. More [about me](about.qmd).

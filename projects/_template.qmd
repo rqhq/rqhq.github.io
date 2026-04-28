@@ -1,0 +1,49 @@
+---
+title: "Project Title"
+description: "One-line summary that appears on the project card."
+date: "2026-01-15"
+categories: [machine-learning, nlp]
+image: ../images/project-thumb.png
+image-alt: "Thumbnail for this project"
+format:
+  html:
+    code-fold: true
+    code-tools: true
+---
+
+## Overview
+
+A short paragraph describing the problem, approach, and outcome.
+
+## Links
+
+- [GitHub repository](https://github.com/rqhq/REPO)
+- [Live demo](https://example.com)  <!-- delete if not applicable -->
+
+## Tech stack
+
+Python, scikit-learn, pandas, ...
+
+## Report
+
+<iframe src="../pdfs/PROJECT_REPORT.pdf" width="100%" height="650px" style="border: 1px solid #ccc;"></iframe>
+
+[Download PDF](../pdfs/PROJECT_REPORT.pdf)
+
+## Notebook
+
+```{=html}
+<!-- Option A: embed the entire rendered notebook inline -->
+```
+
+{{< embed ../notebooks/PROJECT_NOTEBOOK.ipynb echo=true >}}
+
+<!--
+Option B: link out to a standalone notebook page instead.
+Drop the .ipynb into notebooks/ and link directly:
+[Open notebook →](../notebooks/PROJECT_NOTEBOOK.ipynb)
+-->
+
+## Results
+
+Key findings, plots, takeaways.
