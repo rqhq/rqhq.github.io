@@ -1,0 +1,43 @@
+---
+title: "Milwaukee Bucks Business Analytics Hackathon"
+description: "Third-place finish predicting premium seating pricing tiers at the Milwaukee Bucks Business Analytics Hackathon."
+date: "2024-11-01"  # TODO: replace with actual hackathon date
+categories: [machine-learning, classification, sports-analytics]
+image: ../images/bucks.png
+image-alt: "Thumbnail for Bucks hackathon project"
+format:
+  html:
+    code-fold: true
+    code-tools: true
+---
+
+## Overview
+
+Third-place finish at the Milwaukee Bucks Business Analytics Hackathon. The challenge: build a machine learning model to predict the **premium seating pricing tier** for individual games at Fiserv Forum, given features about [TODO: list the kinds of features you got — opponent, day-of-week, time-of-season, historical demand, etc.].
+
+[TODO: 1-2 more sentences on your team's approach — who was on the team, what made your submission stand out, what the time constraint was, etc.]
+
+## Tech stack
+
+[TODO: e.g., Python / scikit-learn / XGBoost / pandas — or R if that's what you used]
+
+## Report
+
+<iframe src="../pdfs/Bucks_Hackathon.pdf" width="100%" height="650px" style="border: 1px solid #ccc;"></iframe>
+
+[Download report](../pdfs/Bucks_Hackathon.pdf)
+
+## Presentation
+
+<iframe src="../pdfs/Bucks_Presentation.pdf" width="100%" height="650px" style="border: 1px solid #ccc;"></iframe>
+
+[Download presentation](../pdfs/Bucks_Presentation.pdf)
+
+## Key findings
+
+[TODO: 3-5 bullets on the headline result. Things worth covering:]
+
+- **The winning model** — what algorithm, what test accuracy / F1 / whatever metric the judges scored on
+- **Top features** — which inputs ended up actually driving the pricing tier (probably opponent quality + day-of-week + season timing, but use what your model said)
+- **Anything counterintuitive** — features the team expected to matter that didn't, or vice versa
+- **Why we placed 3rd, not 1st** — if you know what the top teams did differently, that's a great signal of self-awareness on a portfolio page
