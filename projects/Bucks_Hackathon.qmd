@@ -1,7 +1,7 @@
 ---
 title: "Milwaukee Bucks Business Analytics Hackathon"
 description: "Third-place finish predicting premium seating pricing tiers at the Milwaukee Bucks Business Analytics Hackathon."
-date: "2024-11-01"  # TODO: replace with actual hackathon date
+date: "2024-2-13"  # TODO: replace with actual hackathon date
 categories: [machine-learning, classification, sports-analytics]
 image: ../images/bucks.png
 image-alt: "Thumbnail for Bucks hackathon project"
@@ -13,13 +13,13 @@ format:
 
 ## Overview
 
-Third-place finish at the Milwaukee Bucks Business Analytics Hackathon. The challenge: build a machine learning model to predict the **premium seating pricing tier** for individual games at Fiserv Forum, given features about [TODO: list the kinds of features you got — opponent, day-of-week, time-of-season, historical demand, etc.].
+Third-place finish at the Milwaukee Bucks Business Analytics Hackathon. The challenge: build a machine learning model to predict the **premium seating pricing tier** for individual games at Fiserv Forum, given features about opponent, holidays, time-based, and opponent previous season finish.
 
-[TODO: 1-2 more sentences on your team's approach — who was on the team, what made your submission stand out, what the time constraint was, etc.]
+Being tasked with a classification task where we had to predict pricing tiers, our immediate approach was to form clusters. This led us to using Principal Component Analysis to optimize the number of compenents and then K-means clustering to figure out how many tiers were optimal. This approach impressed the judges and they were currently implementing a similar approach for their real data.
 
 ## Tech stack
 
-[TODO: e.g., Python / scikit-learn / XGBoost / pandas — or R if that's what you used]
+R / Microsoft Powerpoint
 
 ## Report
 
@@ -35,9 +35,8 @@ Third-place finish at the Milwaukee Bucks Business Analytics Hackathon. The chal
 
 ## Key findings
 
-[TODO: 3-5 bullets on the headline result. Things worth covering:]
+- **The winning model** — The algortihm we ended up using was K-means clustering with Principal Compenent Analysis. This allowed for easy interpretation for feature selection and visualizing the pricing tiers.
 
-- **The winning model** — what algorithm, what test accuracy / F1 / whatever metric the judges scored on
-- **Top features** — which inputs ended up actually driving the pricing tier (probably opponent quality + day-of-week + season timing, but use what your model said)
-- **Anything counterintuitive** — features the team expected to matter that didn't, or vice versa
-- **Why we placed 3rd, not 1st** — if you know what the top teams did differently, that's a great signal of self-awareness on a portfolio page
+- **Top features** — The features that we identified after PCA were (Opening.Day + Year + Days.From.Beginning + Opp.Pred.Winning.Pct + Opp.Prev.Conf.Final). From a business perspective, teams with higher winning percentages and better placement from the previous year will likely have Star players on those teams, driving ticket prices up. 
+
+- **Why we placed 3rd, not 1st** - While our classification approach was exactly what the judges wanted to see (K-means and PCA), our business aspect of the hackathon was not as strong. All four members were studying Statistcs/Data Science, so we were very satisfied with our placement despite not having the best business approach.

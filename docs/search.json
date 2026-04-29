@@ -25,7 +25,7 @@
     "href": "projects/index.html",
     "title": "Projects",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nPA Housing Affordability — Capstone Project\n\n\n\ntime-series\n\nforecasting\n\nreal-estate\n\n\n\nForecasting housing affordability across Pennsylvania’s Philadelphia, Pittsburgh, and Harrisburg metros through 2028 using ARIMA and XGBoost.\n\n\n\nApr 25, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nSong Popularity Machine Learning Final Project\n\n\n\nmachine-learning\n\nregression\n\n\n\nPredicting Spotify song popularity across pop, rock, and jazz by comparing eight regression and tree-based models.\n\n\n\nApr 2, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nPA Housing Affordability — Capstone Project\n\n\n\ntime-series\n\nforecasting\n\nreal-estate\n\n\n\nForecasting housing affordability across Pennsylvania’s Philadelphia, Pittsburgh, and Harrisburg metros through 2028 using ARIMA and XGBoost.\n\n\n\nApr 25, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nSong Popularity Machine Learning Final Project\n\n\n\nmachine-learning\n\nregression\n\n\n\nPredicting Spotify song popularity across pop, rock, and jazz by comparing eight regression and tree-based models.\n\n\n\nApr 2, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nMilwaukee Bucks Business Analytics Hackathon\n\n\n\nmachine-learning\n\nclassification\n\nsports-analytics\n\n\n\nThird-place finish predicting premium seating pricing tiers at the Milwaukee Bucks Business Analytics Hackathon.\n\n\n\nFeb 13, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -117,5 +117,47 @@
     "title": "PA Housing Affordability — Capstone Project",
     "section": "Key findings",
     "text": "Key findings\nPittsburgh metro is on track to remain the most accessible of PA’s three big metros through 2028; Philadelphia the least.\n\n\n\nMetro\n2028 affordability ratio\nTrajectory\n\n\n\n\nPittsburgh\n2.76\nmostly improving\n\n\nHarrisburg\n3.18\nmixed\n\n\nPhiladelphia\n3.76\nmostly worsening\n\n\n\nMost affordable county in each metro (2028 forecast):\n\nPittsburgh — Westmoreland County (2.50)\nHarrisburg — Perry County (2.07)\nPhiladelphia — Delaware County (3.21)\n\nWorst affordability in 2028 — all in the Philadelphia metro: Chester (4.07), Bucks (3.96), Philadelphia (3.84), Montgomery (3.61).\nWhat actually drives the ratio. XGBoost’s top three features were median price per square foot, share of population with a bachelor’s degree, and total population — i.e., the dense, educated areas are the expensive ones. At the extremes, social factors moved together: Chester County (richest in PA) had the highest marriage rate, lowest poverty rate, and highest education rate; Forest County was the inverse on every axis.\nMethod note. XGBoost outperformed ARIMA on MAE and RMSE across most counties. The two models agreed on county rankings — except Philadelphia County, where they diverged sharply, suggesting that market is structurally hard to forecast (likely because of the big 2021–2023 correction the EDA flagged)."
+  },
+  {
+    "objectID": "projects/Bucks_Hackathon.html",
+    "href": "projects/Bucks_Hackathon.html",
+    "title": "Milwaukee Bucks Business Analytics Hackathon",
+    "section": "",
+    "text": "Third-place finish at the Milwaukee Bucks Business Analytics Hackathon. The challenge: build a machine learning model to predict the premium seating pricing tier for individual games at Fiserv Forum, given features about opponent, holidays, time-based, and opponent previous season finish.\nBeing tasked with a classification task where we had to predict pricing tiers, our immediate approach was to form clusters. This led us to using Principal Component Analysis to optimize the number of compenents and then K-means clustering to figure out how many tiers were optimal. This approach impressed the judges and they were currently implementing a similar approach for their real data."
+  },
+  {
+    "objectID": "projects/Bucks_Hackathon.html#overview",
+    "href": "projects/Bucks_Hackathon.html#overview",
+    "title": "Milwaukee Bucks Business Analytics Hackathon",
+    "section": "",
+    "text": "Third-place finish at the Milwaukee Bucks Business Analytics Hackathon. The challenge: build a machine learning model to predict the premium seating pricing tier for individual games at Fiserv Forum, given features about opponent, holidays, time-based, and opponent previous season finish.\nBeing tasked with a classification task where we had to predict pricing tiers, our immediate approach was to form clusters. This led us to using Principal Component Analysis to optimize the number of compenents and then K-means clustering to figure out how many tiers were optimal. This approach impressed the judges and they were currently implementing a similar approach for their real data."
+  },
+  {
+    "objectID": "projects/Bucks_Hackathon.html#tech-stack",
+    "href": "projects/Bucks_Hackathon.html#tech-stack",
+    "title": "Milwaukee Bucks Business Analytics Hackathon",
+    "section": "Tech stack",
+    "text": "Tech stack\nR / Microsoft Powerpoint"
+  },
+  {
+    "objectID": "projects/Bucks_Hackathon.html#report",
+    "href": "projects/Bucks_Hackathon.html#report",
+    "title": "Milwaukee Bucks Business Analytics Hackathon",
+    "section": "Report",
+    "text": "Report\n\n\nDownload report"
+  },
+  {
+    "objectID": "projects/Bucks_Hackathon.html#presentation",
+    "href": "projects/Bucks_Hackathon.html#presentation",
+    "title": "Milwaukee Bucks Business Analytics Hackathon",
+    "section": "Presentation",
+    "text": "Presentation\n\n\nDownload presentation"
+  },
+  {
+    "objectID": "projects/Bucks_Hackathon.html#key-findings",
+    "href": "projects/Bucks_Hackathon.html#key-findings",
+    "title": "Milwaukee Bucks Business Analytics Hackathon",
+    "section": "Key findings",
+    "text": "Key findings\n\nThe winning model — The algortihm we ended up using was K-means clustering with Principal Compenent Analysis. This allowed for easy interpretation for feature selection and visualizing the pricing tiers.\nTop features — The features that we identified after PCA were (Opening.Day + Year + Days.From.Beginning + Opp.Pred.Winning.Pct + Opp.Prev.Conf.Final). From a business perspective, teams with higher winning percentages and better placement from the previous year will likely have Star players on those teams, driving ticket prices up.\nWhy we placed 3rd, not 1st - While our classification approach was exactly what the judges wanted to see (K-means and PCA), our business aspect of the hackathon was not as strong. All four members were studying Statistcs/Data Science, so we were very satisfied with our placement despite not having the best business approach."
   }
 ]
