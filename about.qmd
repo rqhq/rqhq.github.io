@@ -4,7 +4,7 @@ title: "About"
 
 ## About me
 
-Hi, I'm Ryan! I am a data scientist who specializes in transforming raw data into predictive models and actionable insights. I am pursuing my M.S. in Data Science at Drexel University, having earned my B.S. from the University of Pittsburgh in 2025. 
+Hi, I'm Ryan! I am a data scientist who specializes in transforming raw data into predictive models and actionable insights. I am pursuing my M.S. in Data Science at Drexel University, having earned my B.S. in Data Science from the University of Pittsburgh in 2025. 
 
 This site collects data science projects from my undergraduate and graduate work, spanning applied ML, time series forecasting, statistical modeling, recommender systems, analytics dashboards, and data science pipelines.
 
@@ -14,3 +14,4 @@ Currently, my main focus is designing a custom Spotify recommendation system and
 
 - **GitHub**: [@rqhq](https://github.com/rqhq)
 - **Email**: [rwquinlan@outlook.com](mailto:rwquinlan@outlook.com)
+- **Linked-In**: (www.linkedin.com/in/ryan-w-quinlan)
