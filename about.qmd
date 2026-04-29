@@ -14,4 +14,4 @@ Currently, my main focus is designing a custom Spotify recommendation system and
 
 - **GitHub**: [@rqhq](https://github.com/rqhq)
 - **Email**: [rwquinlan@outlook.com](mailto:rwquinlan@outlook.com)
-- **Linked-In**: (www.linkedin.com/in/ryan-w-quinlan)
+- **Linked-In**: [ryan-w-quinlan](https://www.linkedin.com/in/ryan-w-quinlan)
