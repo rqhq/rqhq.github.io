@@ -1,0 +1,64 @@
+---
+title: "Rail Weather Risk — Reproducible ML Pipeline"
+description: "Group project predicting monthly highway-rail grade crossing accidents from weather conditions, built as a fully reproducible DVC pipeline over 50 years of FRA and NOAA data."
+date: "2026-03-16"
+categories: [machine-learning, regression, reproducible-pipelines]
+image: ../images/train-thumb.png
+image-alt: "Thumbnail for rail weather risk project"
+format:
+  html:
+    code-fold: true
+    code-tools: true
+---
+
+## Overview
+
+Group project for *DSCI 611 — Data Acquisition and Pre-processing* at Drexel, with [Phillip Roman](https://github.com/PhillipJRoman), [Minh Vo](https://github.com/minhmgnvo), and [Anthi Lyra](https://github.com/al3858). Research question: **does weather measurably affect the rate of accidents at highway-rail grade crossings, and can we predict monthly counts well enough to be useful?**
+
+We combined 50 years of Federal Railroad Administration accident data (1975–2025, ~250K incidents) with 8.7M NOAA hourly weather observations across the 9 US climate regions, and built four count-regression models: XGBoost, Random Forest, Poisson, and Negative Binomial where we compared the baseline and tuned versions of each. The whole pipeline runs end-to-end as a 25+ stage DVC pipeline; one command (`dvc repro`) reproduces every result from raw data to evaluation notebooks.
+
+
+I led the initial EDA and owned the statistical framing for the team, selecting the four model classes. I decided Poisson and Negative Binomial for the right count-regression baselines, pushing for deviance-based evaluation alongside MAE and RMSE. Learned the basics of Data Version Control and gained a better understanding of how to setup and run the full pipeline via the command line.
+
+## Tech stack
+
+Python / DVC / Optuna / scikit-learn / XGBoost / statsmodels / pandas / jupytext
+
+## Repository
+
+The full project — pipeline code, notebooks, trained models, and documentation — lives on GitHub:
+
+[**rqhq/611-rail-weather-risk →**](https://github.com/rqhq/611-rail-weather-risk)
+
+Highlights worth opening:
+
+- [`dvc.yaml`](https://github.com/rqhq/611-rail-weather-risk/blob/main/dvc.yaml) — full 25-stage pipeline definition
+- [`PROJ_DETAILS.md`](https://github.com/rqhq/611-rail-weather-risk/blob/main/PROJ_DETAILS.md) — stage-by-stage technical writeup
+- [`models/`](https://github.com/rqhq/611-rail-weather-risk/tree/main/models) — baseline vs. tuned evaluation notebooks
+- [`prompts/`](https://github.com/rqhq/611-rail-weather-risk/tree/main/prompts) — full AI-assistance documentation per DSCI 611 academic integrity policy
+
+## Results
+
+Final test set performance (2021–2025, 503 region-months never seen during training or tuning), best-to-worst by Mean Poisson Deviance:
+
+| Model               | MAE  | RMSE | Mean Poisson Deviance | Tuning approach                                  |
+|---------------------|-----:|-----:|---------------------:|--------------------------------------------------|
+| **XGBoost**         | **6.10** | **8.73** | **3.72** | Optuna Bayesian optimization                  |
+| Random Forest       | 6.63 | 9.28 | 4.29                  | Optuna Bayesian optimization                     |
+| Poisson Regression  | 10.66| 13.19| 9.03                  | Forward stepwise + interactions + alpha          |
+| Negative Binomial   | 10.59| 14.32| 10.94                 | Exhaustive weather subset search + interactions  |
+
+Tree models cleanly outperformed the GLMs on every metric. Validation-to-test MPD drift was small across the board (XGBoost +5.1%, Random Forest +3.1%, Poisson +3.1%, Negative Binomial +8.6%) — the architecture ranking held even though the test period included post-COVID recovery dynamics the training data never saw.
+
+The full test-set evaluation notebook, including regional MAE heatmaps and predicted-vs-actual time series for the highest-incident NOAA regions:
+
+<iframe src="../pdfs/test_model_eval.pdf" width="100%" height="650px" style="border: 1px solid #ccc;"></iframe>
+
+[Download notebook](../pdfs/test_model_eval.pdf)
+
+## Key findings
+
+- **Visibility was the most predictive weather feature** across all four models, supporting the core hypothesis that weather meaningfully affects accident rates at grade crossings. This was consistent with prior FRA literature linking fog/low-visibility to crossing collisions.
+- **Tree models won decisively over GLMs.** XGBoost beat Negative Binomial by nearly 4× on Poisson Deviance. The non-linear interactions between weather, geography, and season weren't well-captured by even an interaction-augmented GLM.
+- **Region encoding was a methodological landmine.** Mean-encoding NOAA region cut tree-model MAE nearly in half, but we didn't adopt it because it shifted the model's reliance away from the weather features we were trying to study. A reminder that "highest accuracy" isn't always the right objective in this scenario.
+- **Reproducibility was the differentiator.** The pipeline runs `dvc repro` from raw FRA downloads to evaluation notebooks with no manual steps. Onboarding a new collaborator takes four shell commands ([documented here](https://github.com/rqhq/611-rail-weather-risk/blob/main/ONBOARDING_README.md)).

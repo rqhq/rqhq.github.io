@@ -4,28 +4,28 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Hi, I’m Ryan! I am a data scientist who specializes in transforming raw data into predictive models and actionable insights. I am pursuing my M.S. in Data Science at Drexel University, having earned my B.S. in Data Science from the University of Pittsburgh in 2025.\nThis site collects data science projects from my undergraduate and graduate work, spanning applied ML, time series forecasting, statistical modeling, recommender systems, analytics dashboards, and data science pipelines.\nCurrently, my main focus is designing a custom Spotify recommendation system and analytics dashboard. This project blends advanced algorithms with user-friendly visualizations to explore listening habits and personalized recommendations. My portfolio demonstrates my ability to apply these skills across diverse industries. I have built machine learning models to categorize premium pricing tiers for the Milwaukee Bucks and engineered time series forecasts for real estate markets. I am eager to tackle complex challenges using data-driven solutions."
+    "text": "Hi, I’m Ryan! I am a data scientist who specializes in transforming raw data into predictive models and actionable insights. I am pursuing my M.S. in Data Science at Drexel University, having earned my B.S. from the University of Pittsburgh in 2025.\nThis site collects data science projects from my undergraduate and graduate work, spanning applied ML, time series forecasting, statistical modeling, recommender systems, analytics dashboards, and data science pipelines.\nCurrently, my main focus is designing a custom Spotify recommendation system and analytics dashboard. This project blends advanced algorithms with user-friendly visualizations to explore listening habits and personalized recommendations. My portfolio demonstrates my ability to apply these skills across diverse industries. I have built machine learning models to categorize premium pricing tiers for the Milwaukee Bucks and engineered time series forecasts for real estate markets. I am eager to tackle complex challenges using data-driven solutions."
   },
   {
     "objectID": "about.html#about-me",
     "href": "about.html#about-me",
     "title": "About",
     "section": "",
-    "text": "Hi, I’m Ryan! I am a data scientist who specializes in transforming raw data into predictive models and actionable insights. I am pursuing my M.S. in Data Science at Drexel University, having earned my B.S. in Data Science from the University of Pittsburgh in 2025.\nThis site collects data science projects from my undergraduate and graduate work, spanning applied ML, time series forecasting, statistical modeling, recommender systems, analytics dashboards, and data science pipelines.\nCurrently, my main focus is designing a custom Spotify recommendation system and analytics dashboard. This project blends advanced algorithms with user-friendly visualizations to explore listening habits and personalized recommendations. My portfolio demonstrates my ability to apply these skills across diverse industries. I have built machine learning models to categorize premium pricing tiers for the Milwaukee Bucks and engineered time series forecasts for real estate markets. I am eager to tackle complex challenges using data-driven solutions."
+    "text": "Hi, I’m Ryan! I am a data scientist who specializes in transforming raw data into predictive models and actionable insights. I am pursuing my M.S. in Data Science at Drexel University, having earned my B.S. from the University of Pittsburgh in 2025.\nThis site collects data science projects from my undergraduate and graduate work, spanning applied ML, time series forecasting, statistical modeling, recommender systems, analytics dashboards, and data science pipelines.\nCurrently, my main focus is designing a custom Spotify recommendation system and analytics dashboard. This project blends advanced algorithms with user-friendly visualizations to explore listening habits and personalized recommendations. My portfolio demonstrates my ability to apply these skills across diverse industries. I have built machine learning models to categorize premium pricing tiers for the Milwaukee Bucks and engineered time series forecasts for real estate markets. I am eager to tackle complex challenges using data-driven solutions."
   },
   {
     "objectID": "about.html#contact",
     "href": "about.html#contact",
     "title": "About",
     "section": "Contact",
-    "text": "Contact\n\nGitHub: @rqhq\nEmail: rwquinlan@outlook.com\nLinked-In: ryan-w-quinlan"
+    "text": "Contact\n\nGitHub: @rqhq\nEmail: rwquinlan@outlook.com"
   },
   {
     "objectID": "projects/index.html",
     "href": "projects/index.html",
     "title": "Projects",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nPA Housing Affordability — Capstone Project\n\n\n\ntime-series\n\nforecasting\n\nreal-estate\n\n\n\nForecasting housing affordability across Pennsylvania’s Philadelphia, Pittsburgh, and Harrisburg metros through 2028 using ARIMA and XGBoost.\n\n\n\nApr 25, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nSong Popularity Machine Learning Final Project\n\n\n\nmachine-learning\n\nregression\n\n\n\nPredicting Spotify song popularity across pop, rock, and jazz by comparing eight regression and tree-based models.\n\n\n\nApr 2, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nMilwaukee Bucks Business Analytics Hackathon\n\n\n\nmachine-learning\n\nclassification\n\nsports-analytics\n\n\n\nThird-place finish predicting premium seating pricing tiers at the Milwaukee Bucks Business Analytics Hackathon.\n\n\n\nFeb 13, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nRail Weather Risk — Reproducible ML Pipeline\n\n\n\nmachine-learning\n\nregression\n\nreproducible-pipelines\n\n\n\nGroup project predicting monthly highway-rail grade crossing accidents from weather conditions, built as a fully reproducible DVC pipeline over 50 years of FRA and NOAA data.\n\n\n\nMar 16, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nPA Housing Affordability — Capstone Project\n\n\n\ntime-series\n\nforecasting\n\nreal-estate\n\n\n\nForecasting housing affordability across Pennsylvania’s Philadelphia, Pittsburgh, and Harrisburg metros through 2028 using ARIMA and XGBoost.\n\n\n\nApr 25, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nSong Popularity Machine Learning Final Project\n\n\n\nmachine-learning\n\nregression\n\n\n\nPredicting Spotify song popularity across pop, rock, and jazz by comparing eight regression and tree-based models.\n\n\n\nApr 2, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nMilwaukee Bucks Business Analytics Hackathon\n\n\n\nmachine-learning\n\nclassification\n\nsports-analytics\n\n\n\nThird-place finish predicting premium seating pricing tiers at the Milwaukee Bucks Business Analytics Hackathon.\n\n\n\nFeb 13, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -159,5 +159,47 @@
     "title": "Milwaukee Bucks Business Analytics Hackathon",
     "section": "Key findings",
     "text": "Key findings\n\nThe winning model — The algortihm we ended up using was K-means clustering with Principal Compenent Analysis. This allowed for easy interpretation for feature selection and visualizing the pricing tiers.\nTop features — The features that we identified after PCA were (Opening.Day + Year + Days.From.Beginning + Opp.Pred.Winning.Pct + Opp.Prev.Conf.Final). From a business perspective, teams with higher winning percentages and better placement from the previous year will likely have Star players on those teams, driving ticket prices up.\nWhy we placed 3rd, not 1st - While our classification approach was exactly what the judges wanted to see (K-means and PCA), our business aspect of the hackathon was not as strong. All four members were studying Statistcs/Data Science, so we were very satisfied with our placement despite not having the best business approach."
+  },
+  {
+    "objectID": "projects/Rail_Weather_Risk.html",
+    "href": "projects/Rail_Weather_Risk.html",
+    "title": "Rail Weather Risk — Reproducible ML Pipeline",
+    "section": "",
+    "text": "Group project for DSCI 611 — Data Acquisition and Pre-processing at Drexel, with Phillip Roman, Minh Vo, and Anthi Lyra. Research question: does weather measurably affect the rate of accidents at highway-rail grade crossings, and can we predict monthly counts well enough to be useful?\nWe combined 50 years of Federal Railroad Administration accident data (1975–2025, ~250K incidents) with 8.7M NOAA hourly weather observations across the 9 US climate regions, and built four count-regression models: XGBoost, Random Forest, Poisson, and Negative Binomial where we compared the baseline and tuned versions of each. The whole pipeline runs end-to-end as a 25+ stage DVC pipeline; one command (dvc repro) reproduces every result from raw data to evaluation notebooks.\nI led the initial EDA and owned the statistical framing for the team, selecting the four model classes. I decided Poisson and Negative Binomial for the right count-regression baselines, pushing for deviance-based evaluation alongside MAE and RMSE. Learned the basics of Data Version Control and gained a better understanding of how to setup and run the full pipeline via the command line."
+  },
+  {
+    "objectID": "projects/Rail_Weather_Risk.html#overview",
+    "href": "projects/Rail_Weather_Risk.html#overview",
+    "title": "Rail Weather Risk — Reproducible ML Pipeline",
+    "section": "",
+    "text": "Group project for DSCI 611 — Data Acquisition and Pre-processing at Drexel, with Phillip Roman, Minh Vo, and Anthi Lyra. Research question: does weather measurably affect the rate of accidents at highway-rail grade crossings, and can we predict monthly counts well enough to be useful?\nWe combined 50 years of Federal Railroad Administration accident data (1975–2025, ~250K incidents) with 8.7M NOAA hourly weather observations across the 9 US climate regions, and built four count-regression models: XGBoost, Random Forest, Poisson, and Negative Binomial where we compared the baseline and tuned versions of each. The whole pipeline runs end-to-end as a 25+ stage DVC pipeline; one command (dvc repro) reproduces every result from raw data to evaluation notebooks.\nI led the initial EDA and owned the statistical framing for the team, selecting the four model classes. I decided Poisson and Negative Binomial for the right count-regression baselines, pushing for deviance-based evaluation alongside MAE and RMSE. Learned the basics of Data Version Control and gained a better understanding of how to setup and run the full pipeline via the command line."
+  },
+  {
+    "objectID": "projects/Rail_Weather_Risk.html#tech-stack",
+    "href": "projects/Rail_Weather_Risk.html#tech-stack",
+    "title": "Rail Weather Risk — Reproducible ML Pipeline",
+    "section": "Tech stack",
+    "text": "Tech stack\nPython / DVC / Optuna / scikit-learn / XGBoost / statsmodels / pandas / jupytext"
+  },
+  {
+    "objectID": "projects/Rail_Weather_Risk.html#repository",
+    "href": "projects/Rail_Weather_Risk.html#repository",
+    "title": "Rail Weather Risk — Reproducible ML Pipeline",
+    "section": "Repository",
+    "text": "Repository\nThe full project — pipeline code, notebooks, trained models, and documentation — lives on GitHub:\nrqhq/611-rail-weather-risk →\nHighlights worth opening:\n\ndvc.yaml — full 25-stage pipeline definition\nPROJ_DETAILS.md — stage-by-stage technical writeup\nmodels/ — baseline vs. tuned evaluation notebooks\nprompts/ — full AI-assistance documentation per DSCI 611 academic integrity policy"
+  },
+  {
+    "objectID": "projects/Rail_Weather_Risk.html#results",
+    "href": "projects/Rail_Weather_Risk.html#results",
+    "title": "Rail Weather Risk — Reproducible ML Pipeline",
+    "section": "Results",
+    "text": "Results\nFinal test set performance (2021–2025, 503 region-months never seen during training or tuning), best-to-worst by Mean Poisson Deviance:\n\n\n\n\n\n\n\n\n\n\nModel\nMAE\nRMSE\nMean Poisson Deviance\nTuning approach\n\n\n\n\nXGBoost\n6.10\n8.73\n3.72\nOptuna Bayesian optimization\n\n\nRandom Forest\n6.63\n9.28\n4.29\nOptuna Bayesian optimization\n\n\nPoisson Regression\n10.66\n13.19\n9.03\nForward stepwise + interactions + alpha\n\n\nNegative Binomial\n10.59\n14.32\n10.94\nExhaustive weather subset search + interactions\n\n\n\nTree models cleanly outperformed the GLMs on every metric. Validation-to-test MPD drift was small across the board (XGBoost +5.1%, Random Forest +3.1%, Poisson +3.1%, Negative Binomial +8.6%) — the architecture ranking held even though the test period included post-COVID recovery dynamics the training data never saw.\nThe full test-set evaluation notebook, including regional MAE heatmaps and predicted-vs-actual time series for the highest-incident NOAA regions:\n\n\nDownload notebook"
+  },
+  {
+    "objectID": "projects/Rail_Weather_Risk.html#key-findings",
+    "href": "projects/Rail_Weather_Risk.html#key-findings",
+    "title": "Rail Weather Risk — Reproducible ML Pipeline",
+    "section": "Key findings",
+    "text": "Key findings\n\nVisibility was the most predictive weather feature across all four models, supporting the core hypothesis that weather meaningfully affects accident rates at grade crossings. This was consistent with prior FRA literature linking fog/low-visibility to crossing collisions.\nTree models won decisively over GLMs. XGBoost beat Negative Binomial by nearly 4× on Poisson Deviance. The non-linear interactions between weather, geography, and season weren’t well-captured by even an interaction-augmented GLM.\nRegion encoding was a methodological landmine. Mean-encoding NOAA region cut tree-model MAE nearly in half, but we didn’t adopt it because it shifted the model’s reliance away from the weather features we were trying to study. A reminder that “highest accuracy” isn’t always the right objective in this scenario.\nReproducibility was the differentiator. The pipeline runs dvc repro from raw FRA downloads to evaluation notebooks with no manual steps. Onboarding a new collaborator takes four shell commands (documented here)."
   }
 ]
