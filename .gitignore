@@ -5,3 +5,5 @@ __pycache__/
 *.pyc
 
 **/*.quarto_ipynb
+
+CLAUDE.md
