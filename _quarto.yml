@@ -4,6 +4,7 @@ project:
   resources:
     - "pdfs/"
     - "notebooks/"
+    - "CNAME"
 
 execute:
   freeze: true

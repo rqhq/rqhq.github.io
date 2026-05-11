@@ -1,0 +1,50 @@
+---
+title: "New Soundz — Spotify Analytics + Artist Recommender"
+description: "A hybrid collaborative-filtering recommender that turns your Spotify listening history into personalized artist recommendations, deployed as a live Streamlit web app."
+date: "2026-05-07"
+categories: [machine-learning, recommender-systems, web-app]
+image: ../images/new-soundz-hero.png
+image-alt: "Thumbnail for the New Soundz Spotify recommender app"
+format:
+  html:
+    code-fold: true
+    code-tools: true
+---
+
+## Overview
+
+New Soundz is a multi-user web app that connects to your Spotify account, analyzes your listening history, and recommends artists you'd probably like but haven't heard yet. Built end-to-end as a personal project to ship a real ML system to production rather than just stop at a notebook.
+
+[**Try the live app →**](https://new-soundz.streamlit.app/)
+
+The app is in Spotify's developer-mode access tier, which caps usage at 25 manually allow-listed users. If you're a recruiter or visitor and the OAuth login is gated, there's a built-in demo mode that walks through a simulated session against my own listening data.
+
+## Tech stack
+
+Python / Streamlit / LensKit / Spotipy / Last.fm API / SQLite / pandas / numpy
+
+## How it works
+
+The recommender is a **hybrid collaborative-filtering system** with three layers:
+
+1. **CF backbone.** Alternating Least Squares (ALS) trained offline on the Last.fm 360K dataset (~360K users × 270K artists, ~17M listening events). Vectorizes every artist into a learned embedding space.
+2. **Fold-in inference for new users.** When a user logs in with Spotify, their top-artist history is converted into a sparse user vector and folded into the trained ALS model in a single matrix solve — sub-100ms per request, no retraining needed.
+3. **Proxy substitution + content fallback.** The Last.fm dataset is from 2008–2009, so roughly half of any modern listener's plays are for artists not in the CF vocabulary (Kendrick, Tyler, Frank Ocean, etc.). For unmatched artists, the system queries Last.fm's similar-artists API, intersects with the CF vocab, and contributes decayed weights to the user vector. If the result is still too sparse, a content-based scorer ranks candidates by genre-tag overlap.
+
+A separate **reverse-proxy expansion** step walks the Last.fm similarity graph from the CF recommendations to surface contemporary artists that postdate the training data — the difference between recommending "bands like Radiohead in 2008" and "bands like Radiohead today."
+
+## Repository
+
+[**rqhq/New_Soundz →**](https://github.com/rqhq/New_Soundz)
+
+## Status
+
+In active development. Day-to-day progress and design decisions are documented in the repo's project log. Known limitations:
+
+- **Spotify dev-mode user cap** — production access requires Spotify Extension Review (2–6 weeks). Currently allow-listed for 25 users; demo mode covers the rest.
+- **Pre-2010 training data** — the Last.fm 360K snapshot ends in 2009, so coverage for newer artists relies on the proxy + reverse-proxy paths.
+- **Genre cache warm-up** — first-time recommendations for an unseen artist trigger Last.fm/Spotify API lookups; cached afterward.
+
+## What I'd build next
+
+[TODO: 2-3 bullets on planned next steps — e.g. content-based fallback scorer for sparse vectors, deeper analytics dashboard, exporting recommendations to a Spotify playlist, etc.]
