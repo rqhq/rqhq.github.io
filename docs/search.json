@@ -4,14 +4,14 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Hi, I’m Ryan! I am a data scientist who specializes in transforming raw data into predictive models and actionable insights. I am pursuing my M.S. in Data Science at Drexel University, having earned my B.S. in Data Science from the University of Pittsburgh in 2025.\nThis site collects data science projects from my undergraduate and graduate work, spanning applied ML, time series forecasting, statistical modeling, recommender systems, analytics dashboards, and data science pipelines.\nCurrently, my main focus is designing a custom Spotify recommendation system and analytics dashboard. This project blends advanced algorithms with user-friendly visualizations to explore listening habits and personalized recommendations. My portfolio demonstrates my ability to apply these skills across diverse industries. I have built machine learning models to categorize premium pricing tiers for the Milwaukee Bucks and engineered time series forecasts for real estate markets. I am eager to tackle complex challenges using data-driven solutions."
+    "text": "Hi, I’m Ryan! I am a data scientist who specializes in transforming raw data into predictive models and actionable insights. I am pursuing my M.S. in Data Science at Drexel University, having earned my B.S. in Data Science from the University of Pittsburgh in 2025.\nThis site collects data science projects from my undergraduate and graduate work, spanning applied ML, time series forecasting, statistical modeling, recommender systems, analytics dashboards, and data science pipelines.\nMy most recent project focused on designing a custom Spotify recommendation engine and analytics dashboard. This project blends advanced algorithms with user-friendly visualizations to explore listening habits and personalized recommendations. My portfolio demonstrates my ability to apply these skills across diverse industries. I have built machine learning models to categorize premium pricing tiers for the Milwaukee Bucks and engineered time series forecasts for real estate markets. I am eager to tackle complex challenges using data-driven solutions."
   },
   {
     "objectID": "about.html#about-me",
     "href": "about.html#about-me",
     "title": "About",
     "section": "",
-    "text": "Hi, I’m Ryan! I am a data scientist who specializes in transforming raw data into predictive models and actionable insights. I am pursuing my M.S. in Data Science at Drexel University, having earned my B.S. in Data Science from the University of Pittsburgh in 2025.\nThis site collects data science projects from my undergraduate and graduate work, spanning applied ML, time series forecasting, statistical modeling, recommender systems, analytics dashboards, and data science pipelines.\nCurrently, my main focus is designing a custom Spotify recommendation system and analytics dashboard. This project blends advanced algorithms with user-friendly visualizations to explore listening habits and personalized recommendations. My portfolio demonstrates my ability to apply these skills across diverse industries. I have built machine learning models to categorize premium pricing tiers for the Milwaukee Bucks and engineered time series forecasts for real estate markets. I am eager to tackle complex challenges using data-driven solutions."
+    "text": "Hi, I’m Ryan! I am a data scientist who specializes in transforming raw data into predictive models and actionable insights. I am pursuing my M.S. in Data Science at Drexel University, having earned my B.S. in Data Science from the University of Pittsburgh in 2025.\nThis site collects data science projects from my undergraduate and graduate work, spanning applied ML, time series forecasting, statistical modeling, recommender systems, analytics dashboards, and data science pipelines.\nMy most recent project focused on designing a custom Spotify recommendation engine and analytics dashboard. This project blends advanced algorithms with user-friendly visualizations to explore listening habits and personalized recommendations. My portfolio demonstrates my ability to apply these skills across diverse industries. I have built machine learning models to categorize premium pricing tiers for the Milwaukee Bucks and engineered time series forecasts for real estate markets. I am eager to tackle complex challenges using data-driven solutions."
   },
   {
     "objectID": "about.html#contact",
@@ -23,42 +23,42 @@
   {
     "objectID": "projects/Housing_Affordability.html",
     "href": "projects/Housing_Affordability.html",
-    "title": "PA Housing Affordability — Capstone Project",
+    "title": "PA Housing Affordability Capstone Project",
     "section": "",
     "text": "Senior capstone project at the University of Pittsburgh, completed April 2025 with my partner Colton Dumm. The question we set out to answer: where in Pennsylvania can a young buyer actually afford to live in 2028?\nWe built an integrated dataset combining Redfin’s monthly housing market data with the U.S. Census Bureau’s American Community Survey at the county level (2012–2023), focused on the three big PA metros (Philadelphia, Pittsburgh, Harrisburg), and forecast affordability through 2028 with two complementary models:\n\nARIMA to capture temporal patterns and seasonality in median sale price.\nXGBoost to incorporate the broader socioeconomic features (education, population, income, marriage and poverty rates) that ARIMA can’t ingest.\n\nThe primary metric is the affordability ratio — median sale price ÷ median household income. Lower is more affordable. PA lawmakers have informally floated a “3× rule” as a target: median home price should be roughly three times median household income."
   },
   {
     "objectID": "projects/Housing_Affordability.html#overview",
     "href": "projects/Housing_Affordability.html#overview",
-    "title": "PA Housing Affordability — Capstone Project",
+    "title": "PA Housing Affordability Capstone Project",
     "section": "",
     "text": "Senior capstone project at the University of Pittsburgh, completed April 2025 with my partner Colton Dumm. The question we set out to answer: where in Pennsylvania can a young buyer actually afford to live in 2028?\nWe built an integrated dataset combining Redfin’s monthly housing market data with the U.S. Census Bureau’s American Community Survey at the county level (2012–2023), focused on the three big PA metros (Philadelphia, Pittsburgh, Harrisburg), and forecast affordability through 2028 with two complementary models:\n\nARIMA to capture temporal patterns and seasonality in median sale price.\nXGBoost to incorporate the broader socioeconomic features (education, population, income, marriage and poverty rates) that ARIMA can’t ingest.\n\nThe primary metric is the affordability ratio — median sale price ÷ median household income. Lower is more affordable. PA lawmakers have informally floated a “3× rule” as a target: median home price should be roughly three times median household income."
   },
   {
     "objectID": "projects/Housing_Affordability.html#tech-stack",
     "href": "projects/Housing_Affordability.html#tech-stack",
-    "title": "PA Housing Affordability — Capstone Project",
+    "title": "PA Housing Affordability Capstone Project",
     "section": "Tech stack",
     "text": "Tech stack\nR / tidyverse / forecast / xgboost / ggplot2"
   },
   {
     "objectID": "projects/Housing_Affordability.html#research-paper",
     "href": "projects/Housing_Affordability.html#research-paper",
-    "title": "PA Housing Affordability — Capstone Project",
+    "title": "PA Housing Affordability Capstone Project",
     "section": "Research paper",
     "text": "Research paper\n\n\nDownload paper"
   },
   {
     "objectID": "projects/Housing_Affordability.html#presentation",
     "href": "projects/Housing_Affordability.html#presentation",
-    "title": "PA Housing Affordability — Capstone Project",
+    "title": "PA Housing Affordability Capstone Project",
     "section": "Presentation",
     "text": "Presentation\n50-slide deck walking through EDA, methods, and results in more visual detail than the paper.\n\n\nDownload presentation"
   },
   {
     "objectID": "projects/Housing_Affordability.html#key-findings",
     "href": "projects/Housing_Affordability.html#key-findings",
-    "title": "PA Housing Affordability — Capstone Project",
+    "title": "PA Housing Affordability Capstone Project",
     "section": "Key findings",
     "text": "Key findings\nPittsburgh metro is on track to remain the most accessible of PA’s three big metros through 2028; Philadelphia the least.\n\n\n\nMetro\n2028 affordability ratio\nTrajectory\n\n\n\n\nPittsburgh\n2.76\nmostly improving\n\n\nHarrisburg\n3.18\nmixed\n\n\nPhiladelphia\n3.76\nmostly worsening\n\n\n\nMost affordable county in each metro (2028 forecast):\n\nPittsburgh — Westmoreland County (2.50)\nHarrisburg — Perry County (2.07)\nPhiladelphia — Delaware County (3.21)\n\nWorst affordability in 2028 — all in the Philadelphia metro: Chester (4.07), Bucks (3.96), Philadelphia (3.84), Montgomery (3.61).\nWhat actually drives the ratio. XGBoost’s top three features were median price per square foot, share of population with a bachelor’s degree, and total population — i.e., the dense, educated areas are the expensive ones. At the extremes, social factors moved together: Chester County (richest in PA) had the highest marriage rate, lowest poverty rate, and highest education rate; Forest County was the inverse on every axis.\nMethod note. XGBoost outperformed ARIMA on MAE and RMSE across most counties. The two models agreed on county rankings — except Philadelphia County, where they diverged sharply, suggesting that market is structurally hard to forecast (likely because of the big 2021–2023 correction the EDA flagged)."
   },
@@ -116,7 +116,7 @@
     "href": "projects/index.html",
     "title": "Projects",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nNew Soundz: Artist Recommendation Engine + Spotify Analytics\n\n\n\nmachine-learning\n\nrecommender-systems\n\nweb-app\n\n\n\nA hybrid collaborative-filtering recommender that turns your Spotify listening history into personalized artist recommendations, deployed as a live Streamlit web app.\n\n\n\nMay 7, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nRail Weather Risk — Reproducible ML Pipeline\n\n\n\nmachine-learning\n\nregression\n\nreproducible-pipelines\n\n\n\nGroup project predicting monthly highway-rail grade crossing accidents from weather conditions, built as a fully reproducible DVC pipeline over 50 years of FRA and NOAA data.\n\n\n\nMar 16, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nPA Housing Affordability — Capstone Project\n\n\n\ntime-series\n\nforecasting\n\nreal-estate\n\n\n\nForecasting housing affordability across Pennsylvania’s Philadelphia, Pittsburgh, and Harrisburg metros through 2028 using ARIMA and XGBoost.\n\n\n\nApr 25, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nSong Popularity Machine Learning Final Project\n\n\n\nmachine-learning\n\nregression\n\n\n\nPredicting Spotify song popularity across pop, rock, and jazz by comparing eight regression and tree-based models.\n\n\n\nApr 2, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nMilwaukee Bucks Business Analytics Hackathon\n\n\n\nmachine-learning\n\nclassification\n\nsports-analytics\n\n\n\nThird-place finish predicting premium seating pricing tiers at the Milwaukee Bucks Business Analytics Hackathon.\n\n\n\nFeb 13, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nNew Soundz: Artist Recommendation Engine + Spotify Analytics\n\n\n\nmachine-learning\n\nrecommender-systems\n\nweb-app\n\n\n\nA hybrid collaborative-filtering recommender that turns your Spotify listening history into personalized artist recommendations, deployed as a live Streamlit web app.\n\n\n\nMay 7, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nRail Weather Risk Reproducible ML Pipeline\n\n\n\nmachine-learning\n\nregression\n\nreproducible-pipelines\n\n\n\nGroup project predicting monthly highway-rail grade crossing accidents from weather conditions, built as a fully reproducible DVC pipeline over 50 years of FRA and NOAA data.\n\n\n\nMar 16, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nPA Housing Affordability Capstone Project\n\n\n\ntime-series\n\nforecasting\n\nreal-estate\n\n\n\nForecasting housing affordability across Pennsylvania’s Philadelphia, Pittsburgh, and Harrisburg metros through 2028 using ARIMA and XGBoost.\n\n\n\nApr 25, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nSong Popularity Machine Learning Final Project\n\n\n\nmachine-learning\n\nregression\n\n\n\nPredicting Spotify song popularity across pop, rock, and jazz by comparing eight regression and tree-based models.\n\n\n\nApr 2, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nMilwaukee Bucks Business Analytics Hackathon\n\n\n\nmachine-learning\n\nclassification\n\nsports-analytics\n\n\n\nThird-place finish predicting premium seating pricing tiers at the Milwaukee Bucks Business Analytics Hackathon.\n\n\n\nFeb 13, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "projects/Song_popularity.html",
@@ -156,42 +156,42 @@
   {
     "objectID": "projects/Rail_Weather_Risk.html",
     "href": "projects/Rail_Weather_Risk.html",
-    "title": "Rail Weather Risk — Reproducible ML Pipeline",
+    "title": "Rail Weather Risk Reproducible ML Pipeline",
     "section": "",
     "text": "Group project for DSCI 611 — Data Acquisition and Pre-processing at Drexel, with Phillip Roman, Minh Vo, and Anthi Lyra. Research question: does weather measurably affect the rate of accidents at highway-rail grade crossings, and can we predict monthly counts well enough to be useful?\nWe combined 50 years of Federal Railroad Administration accident data (1975–2025, ~250K incidents) with 8.7M NOAA hourly weather observations across the 9 US climate regions, and built four count-regression models: XGBoost, Random Forest, Poisson, and Negative Binomial where we compared the baseline and tuned versions of each. The whole pipeline runs end-to-end as a 25+ stage DVC pipeline; one command (dvc repro) reproduces every result from raw data to evaluation notebooks.\nI led the initial EDA and owned the statistical framing for the team, selecting the four model classes. I decided Poisson and Negative Binomial for the right count-regression baselines, pushing for deviance-based evaluation alongside MAE and RMSE. Learned the basics of Data Version Control and gained a better understanding of how to setup and run the full pipeline via the command line."
   },
   {
     "objectID": "projects/Rail_Weather_Risk.html#overview",
     "href": "projects/Rail_Weather_Risk.html#overview",
-    "title": "Rail Weather Risk — Reproducible ML Pipeline",
+    "title": "Rail Weather Risk Reproducible ML Pipeline",
     "section": "",
     "text": "Group project for DSCI 611 — Data Acquisition and Pre-processing at Drexel, with Phillip Roman, Minh Vo, and Anthi Lyra. Research question: does weather measurably affect the rate of accidents at highway-rail grade crossings, and can we predict monthly counts well enough to be useful?\nWe combined 50 years of Federal Railroad Administration accident data (1975–2025, ~250K incidents) with 8.7M NOAA hourly weather observations across the 9 US climate regions, and built four count-regression models: XGBoost, Random Forest, Poisson, and Negative Binomial where we compared the baseline and tuned versions of each. The whole pipeline runs end-to-end as a 25+ stage DVC pipeline; one command (dvc repro) reproduces every result from raw data to evaluation notebooks.\nI led the initial EDA and owned the statistical framing for the team, selecting the four model classes. I decided Poisson and Negative Binomial for the right count-regression baselines, pushing for deviance-based evaluation alongside MAE and RMSE. Learned the basics of Data Version Control and gained a better understanding of how to setup and run the full pipeline via the command line."
   },
   {
     "objectID": "projects/Rail_Weather_Risk.html#tech-stack",
     "href": "projects/Rail_Weather_Risk.html#tech-stack",
-    "title": "Rail Weather Risk — Reproducible ML Pipeline",
+    "title": "Rail Weather Risk Reproducible ML Pipeline",
     "section": "Tech stack",
     "text": "Tech stack\nPython / DVC / Optuna / scikit-learn / XGBoost / statsmodels / pandas / jupytext"
   },
   {
     "objectID": "projects/Rail_Weather_Risk.html#repository",
     "href": "projects/Rail_Weather_Risk.html#repository",
-    "title": "Rail Weather Risk — Reproducible ML Pipeline",
+    "title": "Rail Weather Risk Reproducible ML Pipeline",
     "section": "Repository",
     "text": "Repository\nThe full project — pipeline code, notebooks, trained models, and documentation — lives on GitHub:\nrqhq/611-rail-weather-risk →\nHighlights worth opening:\n\ndvc.yaml — full 25-stage pipeline definition\nPROJ_DETAILS.md — stage-by-stage technical writeup\nmodels/ — baseline vs. tuned evaluation notebooks\nprompts/ — full AI-assistance documentation per DSCI 611 academic integrity policy"
   },
   {
     "objectID": "projects/Rail_Weather_Risk.html#results",
     "href": "projects/Rail_Weather_Risk.html#results",
-    "title": "Rail Weather Risk — Reproducible ML Pipeline",
+    "title": "Rail Weather Risk Reproducible ML Pipeline",
     "section": "Results",
     "text": "Results\nFinal test set performance (2021–2025, 503 region-months never seen during training or tuning), best-to-worst by Mean Poisson Deviance:\n\n\n\n\n\n\n\n\n\n\nModel\nMAE\nRMSE\nMean Poisson Deviance\nTuning approach\n\n\n\n\nXGBoost\n6.10\n8.73\n3.72\nOptuna Bayesian optimization\n\n\nRandom Forest\n6.63\n9.28\n4.29\nOptuna Bayesian optimization\n\n\nPoisson Regression\n10.66\n13.19\n9.03\nForward stepwise + interactions + alpha\n\n\nNegative Binomial\n10.59\n14.32\n10.94\nExhaustive weather subset search + interactions\n\n\n\nTree models cleanly outperformed the GLMs on every metric. Validation-to-test MPD drift was small across the board (XGBoost +5.1%, Random Forest +3.1%, Poisson +3.1%, Negative Binomial +8.6%) — the architecture ranking held even though the test period included post-COVID recovery dynamics the training data never saw.\nThe full test-set evaluation notebook, including regional MAE heatmaps and predicted-vs-actual time series for the highest-incident NOAA regions:\n\n\nDownload notebook"
   },
   {
     "objectID": "projects/Rail_Weather_Risk.html#key-findings",
     "href": "projects/Rail_Weather_Risk.html#key-findings",
-    "title": "Rail Weather Risk — Reproducible ML Pipeline",
+    "title": "Rail Weather Risk Reproducible ML Pipeline",
     "section": "Key findings",
     "text": "Key findings\n\nVisibility was the most predictive weather feature across all four models, supporting the core hypothesis that weather meaningfully affects accident rates at grade crossings. This was consistent with prior FRA literature linking fog/low-visibility to crossing collisions.\nTree models won decisively over GLMs. XGBoost beat Negative Binomial by nearly 4× on Poisson Deviance. The non-linear interactions between weather, geography, and season weren’t well-captured by even an interaction-augmented GLM.\nRegion encoding was a methodological landmine. Mean-encoding NOAA region cut tree-model MAE nearly in half, but we didn’t adopt it because it shifted the model’s reliance away from the weather features we were trying to study. A reminder that “highest accuracy” isn’t always the right objective in this scenario.\nReproducibility was the differentiator. The pipeline runs dvc repro from raw FRA downloads to evaluation notebooks with no manual steps. Onboarding a new collaborator takes four shell commands (documented here)."
   },

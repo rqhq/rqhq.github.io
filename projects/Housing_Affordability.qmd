@@ -1,5 +1,5 @@
 ---
-title: "PA Housing Affordability — Capstone Project"
+title: "PA Housing Affordability Capstone Project"
 description: "Forecasting housing affordability across Pennsylvania's Philadelphia, Pittsburgh, and Harrisburg metros through 2028 using ARIMA and XGBoost."
 date: "2025-04-25"
 categories: [time-series, forecasting, real-estate]

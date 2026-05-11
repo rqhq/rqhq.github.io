@@ -8,7 +8,7 @@ Hi, I'm Ryan! I am a data scientist who specializes in transforming raw data int
 
 This site collects data science projects from my undergraduate and graduate work, spanning applied ML, time series forecasting, statistical modeling, recommender systems, analytics dashboards, and data science pipelines.
 
-Currently, my main focus is designing a custom Spotify recommendation system and analytics dashboard. This project blends advanced algorithms with user-friendly visualizations to explore listening habits and personalized recommendations. My portfolio demonstrates my ability to apply these skills across diverse industries. I have built machine learning models to categorize premium pricing tiers for the Milwaukee Bucks and engineered time series forecasts for real estate markets. I am eager to tackle complex challenges using data-driven solutions.
+My most recent project focused on designing a custom Spotify recommendation engine and analytics dashboard. This project blends advanced algorithms with user-friendly visualizations to explore listening habits and personalized recommendations. My portfolio demonstrates my ability to apply these skills across diverse industries. I have built machine learning models to categorize premium pricing tiers for the Milwaukee Bucks and engineered time series forecasts for real estate markets. I am eager to tackle complex challenges using data-driven solutions.
 
 ## Contact
 

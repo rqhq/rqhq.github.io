@@ -1,5 +1,5 @@
 ---
-title: "Rail Weather Risk — Reproducible ML Pipeline"
+title: "Rail Weather Risk Reproducible ML Pipeline"
 description: "Group project predicting monthly highway-rail grade crossing accidents from weather conditions, built as a fully reproducible DVC pipeline over 50 years of FRA and NOAA data."
 date: "2026-03-16"
 categories: [machine-learning, regression, reproducible-pipelines]
