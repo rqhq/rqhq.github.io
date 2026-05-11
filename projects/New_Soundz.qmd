@@ -1,5 +1,5 @@
 ---
-title: "New Soundz — Spotify Analytics + Artist Recommender"
+title: "New Soundz: Artist Recommendation Engine + Spotify Analytics"
 description: "A hybrid collaborative-filtering recommender that turns your Spotify listening history into personalized artist recommendations, deployed as a live Streamlit web app."
 date: "2026-05-07"
 categories: [machine-learning, recommender-systems, web-app]
@@ -13,11 +13,13 @@ format:
 
 ## Overview
 
-New Soundz is a multi-user web app that connects to your Spotify account, analyzes your listening history, and recommends artists you'd probably like but haven't heard yet. Built end-to-end as a personal project to ship a real ML system to production rather than just stop at a notebook.
+New Soundz is a multi-user web app that connects to your Spotify account, analyzes your listening history, and recommends artists you'd probably like but haven't heard yet. Built end-to-end as a personal project to ship a real ML system to production rather than just stop at a notebook. 
 
-[**Try the live app →**](https://new-soundz.streamlit.app/)
+[**Try the demo live app →**](https://new-soundz.streamlit.app/)
 
-The app is in Spotify's developer-mode access tier, which caps usage at 25 manually allow-listed users. If you're a recruiter or visitor and the OAuth login is gated, there's a built-in demo mode that walks through a simulated session against my own listening data.
+The app is in Spotify's developer-mode access tier, which caps usage at 5 manually allow-listed users. If you're a recruiter or visitor and the OAuth login is gated, there's a built-in demo mode that walks through a simulated session against my own listening data.
+
+Email me @rwquinlan@outlook.com if you would like to be added to the allowed user list!
 
 ## Tech stack
 
@@ -27,11 +29,13 @@ Python / Streamlit / LensKit / Spotipy / Last.fm API / SQLite / pandas / numpy
 
 The recommender is a **hybrid collaborative-filtering system** with three layers:
 
-1. **CF backbone.** Alternating Least Squares (ALS) trained offline on the Last.fm 360K dataset (~360K users × 270K artists, ~17M listening events). Vectorizes every artist into a learned embedding space.
-2. **Fold-in inference for new users.** When a user logs in with Spotify, their top-artist history is converted into a sparse user vector and folded into the trained ALS model in a single matrix solve — sub-100ms per request, no retraining needed.
+1. **Collaborative Filtering backbone.** Alternating Least Squares (ALS) trained offline on the Last.fm 360K dataset (~360K users × 270K artists, ~17M listening events). Vectorizes every artist into a learned embedding space.
+2. **Fold-in inference for new users.** When a user logs in with Spotify, their top-artist history is converted into a sparse user vector and folded into the trained ALS model in a single matrix solve; sub-100ms per request, no retraining needed.
 3. **Proxy substitution + content fallback.** The Last.fm dataset is from 2008–2009, so roughly half of any modern listener's plays are for artists not in the CF vocabulary (Kendrick, Tyler, Frank Ocean, etc.). For unmatched artists, the system queries Last.fm's similar-artists API, intersects with the CF vocab, and contributes decayed weights to the user vector. If the result is still too sparse, a content-based scorer ranks candidates by genre-tag overlap.
 
-A separate **reverse-proxy expansion** step walks the Last.fm similarity graph from the CF recommendations to surface contemporary artists that postdate the training data — the difference between recommending "bands like Radiohead in 2008" and "bands like Radiohead today."
+A separate **reverse-proxy expansion** step walks the Last.fm similarity graph from the CF recommendations to surface contemporary artists that postdate the training data - the difference between recommending "bands like Radiohead in 2008" and "bands like Radiohead today."
+
+Two sliders let listeners tune the output: **popularity dampening** pushes big-name picks out of the way so deeper cuts can surface, and **diversity** widens the net beyond your usual style to cover adjacent genres.
 
 ## Repository
 
@@ -41,10 +45,15 @@ A separate **reverse-proxy expansion** step walks the Last.fm similarity graph f
 
 In active development. Day-to-day progress and design decisions are documented in the repo's project log. Known limitations:
 
-- **Spotify dev-mode user cap** — production access requires Spotify Extension Review (2–6 weeks). Currently allow-listed for 25 users; demo mode covers the rest.
-- **Pre-2010 training data** — the Last.fm 360K snapshot ends in 2009, so coverage for newer artists relies on the proxy + reverse-proxy paths.
-- **Genre cache warm-up** — first-time recommendations for an unseen artist trigger Last.fm/Spotify API lookups; cached afterward.
+- **Spotify dev-mode user cap**: production access requires Spotify Extension Review (2–6 weeks). Currently allow-listed for 5 users; demo mode covers the rest.
+- **Pre-2010 training data**: the Last.fm 360K snapshot ends in 2009, so coverage for newer artists relies on the proxy + reverse-proxy paths via Last.fm .
+- **Genre cache warm-up**: first-time recommendations for an unseen artist trigger Last.fm/Spotify API lookups; cached afterward.
 
 ## What I'd build next
 
-[TODO: 2-3 bullets on planned next steps — e.g. content-based fallback scorer for sparse vectors, deeper analytics dashboard, exporting recommendations to a Spotify playlist, etc.]
+- **Adding Other Streaming Services**: I would love to expand the user-base to other streaming services (i.e. Apple Music, Pandora, Amazon Music). I just chose to stick with Spotify as that is the service I use currently.
+
+- **Audio Feature Analytics**: Spotify's API used to provide audio feature statistics but they were removed a few years ago. If I could find a way to access them, I'd implement different visualizations and analyses that dive into a user's audio profile.
+
+- **Exporting Recommendations**: Adding a feature that populates a Spotify playlist with the recommended artists' tracks. This would allow users to skip the hastle of having to individually explore each recommended artist and would populate say 2-3 songs per artist recommended.
+
