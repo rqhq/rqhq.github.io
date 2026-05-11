@@ -9,7 +9,7 @@
 <meta name="dcterms.date" content="2026-05-07">
 <meta name="description" content="A hybrid collaborative-filtering recommender that turns your Spotify listening history into personalized artist recommendations, deployed as a live Streamlit web app.">
 
-<title>New Soundz — Spotify Analytics + Artist Recommender – Ryan Quinlan</title>
+<title>New Soundz: Artist Recommendation Engine + Spotify Analytics – Ryan Quinlan</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -355,7 +355,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">New Soundz — Spotify Analytics + Artist Recommender</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">New Soundz: Artist Recommendation Engine + Spotify Analytics</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
   <div class="quarto-categories">
     <div class="quarto-category">machine-learning</div>
     <div class="quarto-category">recommender-systems</div>
@@ -391,8 +391,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
 <p>New Soundz is a multi-user web app that connects to your Spotify account, analyzes your listening history, and recommends artists you’d probably like but haven’t heard yet. Built end-to-end as a personal project to ship a real ML system to production rather than just stop at a notebook.</p>
-<p><a href="https://new-soundz.streamlit.app/"><strong>Try the live app →</strong></a></p>
-<p>The app is in Spotify’s developer-mode access tier, which caps usage at 25 manually allow-listed users. If you’re a recruiter or visitor and the OAuth login is gated, there’s a built-in demo mode that walks through a simulated session against my own listening data.</p>
+<p><a href="https://new-soundz.streamlit.app/"><strong>Try the demo live app →</strong></a></p>
+<p>The app is in Spotify’s developer-mode access tier, which caps usage at 5 manually allow-listed users. If you’re a recruiter or visitor and the OAuth login is gated, there’s a built-in demo mode that walks through a simulated session against my own listening data.</p>
+<p>Email me <span class="citation" data-cites="rwquinlan">@rwquinlan</span><span class="citation" data-cites="outlook.com">@outlook.com</span> if you would like to be added to the allowed user list!</p>
 </section>
 <section id="tech-stack" class="level2">
 <h2 class="anchored" data-anchor-id="tech-stack">Tech stack</h2>
@@ -402,11 +403,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="how-it-works">How it works</h2>
 <p>The recommender is a <strong>hybrid collaborative-filtering system</strong> with three layers:</p>
 <ol type="1">
-<li><strong>CF backbone.</strong> Alternating Least Squares (ALS) trained offline on the Last.fm 360K dataset (~360K users × 270K artists, ~17M listening events). Vectorizes every artist into a learned embedding space.</li>
-<li><strong>Fold-in inference for new users.</strong> When a user logs in with Spotify, their top-artist history is converted into a sparse user vector and folded into the trained ALS model in a single matrix solve — sub-100ms per request, no retraining needed.</li>
+<li><strong>Collaborative Filtering backbone.</strong> Alternating Least Squares (ALS) trained offline on the Last.fm 360K dataset (~360K users × 270K artists, ~17M listening events). Vectorizes every artist into a learned embedding space.</li>
+<li><strong>Fold-in inference for new users.</strong> When a user logs in with Spotify, their top-artist history is converted into a sparse user vector and folded into the trained ALS model in a single matrix solve; sub-100ms per request, no retraining needed.</li>
 <li><strong>Proxy substitution + content fallback.</strong> The Last.fm dataset is from 2008–2009, so roughly half of any modern listener’s plays are for artists not in the CF vocabulary (Kendrick, Tyler, Frank Ocean, etc.). For unmatched artists, the system queries Last.fm’s similar-artists API, intersects with the CF vocab, and contributes decayed weights to the user vector. If the result is still too sparse, a content-based scorer ranks candidates by genre-tag overlap.</li>
 </ol>
-<p>A separate <strong>reverse-proxy expansion</strong> step walks the Last.fm similarity graph from the CF recommendations to surface contemporary artists that postdate the training data — the difference between recommending “bands like Radiohead in 2008” and “bands like Radiohead today.”</p>
+<p>A separate <strong>reverse-proxy expansion</strong> step walks the Last.fm similarity graph from the CF recommendations to surface contemporary artists that postdate the training data - the difference between recommending “bands like Radiohead in 2008” and “bands like Radiohead today.”</p>
+<p>Two sliders let listeners tune the output: <strong>popularity dampening</strong> pushes big-name picks out of the way so deeper cuts can surface, and <strong>diversity</strong> widens the net beyond your usual style to cover adjacent genres.</p>
 </section>
 <section id="repository" class="level2">
 <h2 class="anchored" data-anchor-id="repository">Repository</h2>
@@ -416,14 +418,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="status">Status</h2>
 <p>In active development. Day-to-day progress and design decisions are documented in the repo’s project log. Known limitations:</p>
 <ul>
-<li><strong>Spotify dev-mode user cap</strong> — production access requires Spotify Extension Review (2–6 weeks). Currently allow-listed for 25 users; demo mode covers the rest.</li>
-<li><strong>Pre-2010 training data</strong> — the Last.fm 360K snapshot ends in 2009, so coverage for newer artists relies on the proxy + reverse-proxy paths.</li>
-<li><strong>Genre cache warm-up</strong> — first-time recommendations for an unseen artist trigger Last.fm/Spotify API lookups; cached afterward.</li>
+<li><strong>Spotify dev-mode user cap</strong>: production access requires Spotify Extension Review (2–6 weeks). Currently allow-listed for 5 users; demo mode covers the rest.</li>
+<li><strong>Pre-2010 training data</strong>: the Last.fm 360K snapshot ends in 2009, so coverage for newer artists relies on the proxy + reverse-proxy paths via Last.fm .</li>
+<li><strong>Genre cache warm-up</strong>: first-time recommendations for an unseen artist trigger Last.fm/Spotify API lookups; cached afterward.</li>
 </ul>
 </section>
 <section id="what-id-build-next" class="level2">
 <h2 class="anchored" data-anchor-id="what-id-build-next">What I’d build next</h2>
-<p>[TODO: 2-3 bullets on planned next steps — e.g.&nbsp;content-based fallback scorer for sparse vectors, deeper analytics dashboard, exporting recommendations to a Spotify playlist, etc.]</p>
+<ul>
+<li><p><strong>Adding Other Streaming Services</strong>: I would love to expand the user-base to other streaming services (i.e.&nbsp;Apple Music, Pandora, Amazon Music). I just chose to stick with Spotify as that is the service I use currently.</p></li>
+<li><p><strong>Audio Feature Analytics</strong>: Spotify’s API used to provide audio feature statistics but they were removed a few years ago. If I could find a way to access them, I’d implement different visualizations and analyses that dive into a user’s audio profile.</p></li>
+<li><p><strong>Exporting Recommendations</strong>: Adding a feature that populates a Spotify playlist with the recommended artists’ tracks. This would allow users to skip the hastle of having to individually explore each recommended artist and would populate say 2-3 songs per artist recommended.</p></li>
+</ul>
 
 
 <!-- -->
@@ -896,7 +902,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "New Soundz — Spotify Analytics + Artist Recommender"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "New Soundz: Artist Recommendation Engine + Spotify Analytics"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "A hybrid collaborative-filtering recommender that turns your Spotify listening history into personalized artist recommendations, deployed as a live Streamlit web app."</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2026-05-07"</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [machine-learning, recommender-systems, web-app]</span></span>
@@ -910,41 +916,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">## Overview</span></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>New Soundz is a multi-user web app that connects to your Spotify account, analyzes your listening history, and recommends artists you'd probably like but haven't heard yet. Built end-to-end as a personal project to ship a real ML system to production rather than just stop at a notebook.</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>New Soundz is a multi-user web app that connects to your Spotify account, analyzes your listening history, and recommends artists you'd probably like but haven't heard yet. Built end-to-end as a personal project to ship a real ML system to production rather than just stop at a notebook. </span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">**Try the live app →**</span><span class="co">](https://new-soundz.streamlit.app/)</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">**Try the demo live app →**</span><span class="co">](https://new-soundz.streamlit.app/)</span></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>The app is in Spotify's developer-mode access tier, which caps usage at 25 manually allow-listed users. If you're a recruiter or visitor and the OAuth login is gated, there's a built-in demo mode that walks through a simulated session against my own listening data.</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>The app is in Spotify's developer-mode access tier, which caps usage at 5 manually allow-listed users. If you're a recruiter or visitor and the OAuth login is gated, there's a built-in demo mode that walks through a simulated session against my own listening data.</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tech stack</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>Email me @rwquinlan@outlook.com if you would like to be added to the allowed user list!</span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>Python / Streamlit / LensKit / Spotipy / Last.fm API / SQLite / pandas / numpy</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tech stack</span></span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu">## How it works</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>Python / Streamlit / LensKit / Spotipy / Last.fm API / SQLite / pandas / numpy</span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>The recommender is a **hybrid collaborative-filtering system** with three layers:</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="fu">## How it works</span></span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**CF backbone.** Alternating Least Squares (ALS) trained offline on the Last.fm 360K dataset (~360K users × 270K artists, ~17M listening events). Vectorizes every artist into a learned embedding space.</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Fold-in inference for new users.** When a user logs in with Spotify, their top-artist history is converted into a sparse user vector and folded into the trained ALS model in a single matrix solve — sub-100ms per request, no retraining needed.</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Proxy substitution + content fallback.** The Last.fm dataset is from 2008–2009, so roughly half of any modern listener's plays are for artists not in the CF vocabulary (Kendrick, Tyler, Frank Ocean, etc.). For unmatched artists, the system queries Last.fm's similar-artists API, intersects with the CF vocab, and contributes decayed weights to the user vector. If the result is still too sparse, a content-based scorer ranks candidates by genre-tag overlap.</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>A separate **reverse-proxy expansion** step walks the Last.fm similarity graph from the CF recommendations to surface contemporary artists that postdate the training data — the difference between recommending "bands like Radiohead in 2008" and "bands like Radiohead today."</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>The recommender is a **hybrid collaborative-filtering system** with three layers:</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Collaborative Filtering backbone.** Alternating Least Squares (ALS) trained offline on the Last.fm 360K dataset (~360K users × 270K artists, ~17M listening events). Vectorizes every artist into a learned embedding space.</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Fold-in inference for new users.** When a user logs in with Spotify, their top-artist history is converted into a sparse user vector and folded into the trained ALS model in a single matrix solve; sub-100ms per request, no retraining needed.</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Proxy substitution + content fallback.** The Last.fm dataset is from 2008–2009, so roughly half of any modern listener's plays are for artists not in the CF vocabulary (Kendrick, Tyler, Frank Ocean, etc.). For unmatched artists, the system queries Last.fm's similar-artists API, intersects with the CF vocab, and contributes decayed weights to the user vector. If the result is still too sparse, a content-based scorer ranks candidates by genre-tag overlap.</span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## Repository</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>A separate **reverse-proxy expansion** step walks the Last.fm similarity graph from the CF recommendations to surface contemporary artists that postdate the training data - the difference between recommending "bands like Radiohead in 2008" and "bands like Radiohead today."</span>
 <span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">**rqhq/New_Soundz →**</span><span class="co">](https://github.com/rqhq/New_Soundz)</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>Two sliders let listeners tune the output: **popularity dampening** pushes big-name picks out of the way so deeper cuts can surface, and **diversity** widens the net beyond your usual style to cover adjacent genres.</span>
 <span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="fu">## Status</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="fu">## Repository</span></span>
 <span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>In active development. Day-to-day progress and design decisions are documented in the repo's project log. Known limitations:</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">**rqhq/New_Soundz →**</span><span class="co">](https://github.com/rqhq/New_Soundz)</span></span>
 <span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Spotify dev-mode user cap** — production access requires Spotify Extension Review (2–6 weeks). Currently allow-listed for 25 users; demo mode covers the rest.</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Pre-2010 training data** — the Last.fm 360K snapshot ends in 2009, so coverage for newer artists relies on the proxy + reverse-proxy paths.</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Genre cache warm-up** — first-time recommendations for an unseen artist trigger Last.fm/Spotify API lookups; cached afterward.</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="fu">## Status</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>In active development. Day-to-day progress and design decisions are documented in the repo's project log. Known limitations:</span>
 <span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="fu">## What I'd build next</span></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">TODO: 2-3 bullets on planned next steps — e.g. content-based fallback scorer for sparse vectors, deeper analytics dashboard, exporting recommendations to a Spotify playlist, etc.</span><span class="co">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Spotify dev-mode user cap**: production access requires Spotify Extension Review (2–6 weeks). Currently allow-listed for 5 users; demo mode covers the rest.</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Pre-2010 training data**: the Last.fm 360K snapshot ends in 2009, so coverage for newer artists relies on the proxy + reverse-proxy paths via Last.fm .</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Genre cache warm-up**: first-time recommendations for an unseen artist trigger Last.fm/Spotify API lookups; cached afterward.</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="fu">## What I'd build next</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Adding Other Streaming Services**: I would love to expand the user-base to other streaming services (i.e. Apple Music, Pandora, Amazon Music). I just chose to stick with Spotify as that is the service I use currently.</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Audio Feature Analytics**: Spotify's API used to provide audio feature statistics but they were removed a few years ago. If I could find a way to access them, I'd implement different visualizations and analyses that dive into a user's audio profile.</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Exporting Recommendations**: Adding a feature that populates a Spotify playlist with the recommended artists' tracks. This would allow users to skip the hastle of having to individually explore each recommended artist and would populate say 2-3 songs per artist recommended.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

@@ -65,58 +65,58 @@
   {
     "objectID": "projects/New_Soundz.html",
     "href": "projects/New_Soundz.html",
-    "title": "New Soundz — Spotify Analytics + Artist Recommender",
+    "title": "New Soundz: Artist Recommendation Engine + Spotify Analytics",
     "section": "",
-    "text": "New Soundz is a multi-user web app that connects to your Spotify account, analyzes your listening history, and recommends artists you’d probably like but haven’t heard yet. Built end-to-end as a personal project to ship a real ML system to production rather than just stop at a notebook.\nTry the live app →\nThe app is in Spotify’s developer-mode access tier, which caps usage at 25 manually allow-listed users. If you’re a recruiter or visitor and the OAuth login is gated, there’s a built-in demo mode that walks through a simulated session against my own listening data."
+    "text": "New Soundz is a multi-user web app that connects to your Spotify account, analyzes your listening history, and recommends artists you’d probably like but haven’t heard yet. Built end-to-end as a personal project to ship a real ML system to production rather than just stop at a notebook.\nTry the demo live app →\nThe app is in Spotify’s developer-mode access tier, which caps usage at 5 manually allow-listed users. If you’re a recruiter or visitor and the OAuth login is gated, there’s a built-in demo mode that walks through a simulated session against my own listening data.\nEmail me @rwquinlan@outlook.com if you would like to be added to the allowed user list!"
   },
   {
     "objectID": "projects/New_Soundz.html#overview",
     "href": "projects/New_Soundz.html#overview",
-    "title": "New Soundz — Spotify Analytics + Artist Recommender",
+    "title": "New Soundz: Artist Recommendation Engine + Spotify Analytics",
     "section": "",
-    "text": "New Soundz is a multi-user web app that connects to your Spotify account, analyzes your listening history, and recommends artists you’d probably like but haven’t heard yet. Built end-to-end as a personal project to ship a real ML system to production rather than just stop at a notebook.\nTry the live app →\nThe app is in Spotify’s developer-mode access tier, which caps usage at 25 manually allow-listed users. If you’re a recruiter or visitor and the OAuth login is gated, there’s a built-in demo mode that walks through a simulated session against my own listening data."
+    "text": "New Soundz is a multi-user web app that connects to your Spotify account, analyzes your listening history, and recommends artists you’d probably like but haven’t heard yet. Built end-to-end as a personal project to ship a real ML system to production rather than just stop at a notebook.\nTry the demo live app →\nThe app is in Spotify’s developer-mode access tier, which caps usage at 5 manually allow-listed users. If you’re a recruiter or visitor and the OAuth login is gated, there’s a built-in demo mode that walks through a simulated session against my own listening data.\nEmail me @rwquinlan@outlook.com if you would like to be added to the allowed user list!"
   },
   {
     "objectID": "projects/New_Soundz.html#tech-stack",
     "href": "projects/New_Soundz.html#tech-stack",
-    "title": "New Soundz — Spotify Analytics + Artist Recommender",
+    "title": "New Soundz: Artist Recommendation Engine + Spotify Analytics",
     "section": "Tech stack",
     "text": "Tech stack\nPython / Streamlit / LensKit / Spotipy / Last.fm API / SQLite / pandas / numpy"
   },
   {
     "objectID": "projects/New_Soundz.html#how-it-works",
     "href": "projects/New_Soundz.html#how-it-works",
-    "title": "New Soundz — Spotify Analytics + Artist Recommender",
+    "title": "New Soundz: Artist Recommendation Engine + Spotify Analytics",
     "section": "How it works",
-    "text": "How it works\nThe recommender is a hybrid collaborative-filtering system with three layers:\n\nCF backbone. Alternating Least Squares (ALS) trained offline on the Last.fm 360K dataset (~360K users × 270K artists, ~17M listening events). Vectorizes every artist into a learned embedding space.\nFold-in inference for new users. When a user logs in with Spotify, their top-artist history is converted into a sparse user vector and folded into the trained ALS model in a single matrix solve — sub-100ms per request, no retraining needed.\nProxy substitution + content fallback. The Last.fm dataset is from 2008–2009, so roughly half of any modern listener’s plays are for artists not in the CF vocabulary (Kendrick, Tyler, Frank Ocean, etc.). For unmatched artists, the system queries Last.fm’s similar-artists API, intersects with the CF vocab, and contributes decayed weights to the user vector. If the result is still too sparse, a content-based scorer ranks candidates by genre-tag overlap.\n\nA separate reverse-proxy expansion step walks the Last.fm similarity graph from the CF recommendations to surface contemporary artists that postdate the training data — the difference between recommending “bands like Radiohead in 2008” and “bands like Radiohead today.”"
+    "text": "How it works\nThe recommender is a hybrid collaborative-filtering system with three layers:\n\nCollaborative Filtering backbone. Alternating Least Squares (ALS) trained offline on the Last.fm 360K dataset (~360K users × 270K artists, ~17M listening events). Vectorizes every artist into a learned embedding space.\nFold-in inference for new users. When a user logs in with Spotify, their top-artist history is converted into a sparse user vector and folded into the trained ALS model in a single matrix solve; sub-100ms per request, no retraining needed.\nProxy substitution + content fallback. The Last.fm dataset is from 2008–2009, so roughly half of any modern listener’s plays are for artists not in the CF vocabulary (Kendrick, Tyler, Frank Ocean, etc.). For unmatched artists, the system queries Last.fm’s similar-artists API, intersects with the CF vocab, and contributes decayed weights to the user vector. If the result is still too sparse, a content-based scorer ranks candidates by genre-tag overlap.\n\nA separate reverse-proxy expansion step walks the Last.fm similarity graph from the CF recommendations to surface contemporary artists that postdate the training data - the difference between recommending “bands like Radiohead in 2008” and “bands like Radiohead today.”\nTwo sliders let listeners tune the output: popularity dampening pushes big-name picks out of the way so deeper cuts can surface, and diversity widens the net beyond your usual style to cover adjacent genres."
   },
   {
     "objectID": "projects/New_Soundz.html#repository",
     "href": "projects/New_Soundz.html#repository",
-    "title": "New Soundz — Spotify Analytics + Artist Recommender",
+    "title": "New Soundz: Artist Recommendation Engine + Spotify Analytics",
     "section": "Repository",
     "text": "Repository\nrqhq/New_Soundz →"
   },
   {
     "objectID": "projects/New_Soundz.html#status",
     "href": "projects/New_Soundz.html#status",
-    "title": "New Soundz — Spotify Analytics + Artist Recommender",
+    "title": "New Soundz: Artist Recommendation Engine + Spotify Analytics",
     "section": "Status",
-    "text": "Status\nIn active development. Day-to-day progress and design decisions are documented in the repo’s project log. Known limitations:\n\nSpotify dev-mode user cap — production access requires Spotify Extension Review (2–6 weeks). Currently allow-listed for 25 users; demo mode covers the rest.\nPre-2010 training data — the Last.fm 360K snapshot ends in 2009, so coverage for newer artists relies on the proxy + reverse-proxy paths.\nGenre cache warm-up — first-time recommendations for an unseen artist trigger Last.fm/Spotify API lookups; cached afterward."
+    "text": "Status\nIn active development. Day-to-day progress and design decisions are documented in the repo’s project log. Known limitations:\n\nSpotify dev-mode user cap: production access requires Spotify Extension Review (2–6 weeks). Currently allow-listed for 5 users; demo mode covers the rest.\nPre-2010 training data: the Last.fm 360K snapshot ends in 2009, so coverage for newer artists relies on the proxy + reverse-proxy paths via Last.fm .\nGenre cache warm-up: first-time recommendations for an unseen artist trigger Last.fm/Spotify API lookups; cached afterward."
   },
   {
     "objectID": "projects/New_Soundz.html#what-id-build-next",
     "href": "projects/New_Soundz.html#what-id-build-next",
-    "title": "New Soundz — Spotify Analytics + Artist Recommender",
+    "title": "New Soundz: Artist Recommendation Engine + Spotify Analytics",
     "section": "What I’d build next",
-    "text": "What I’d build next\n[TODO: 2-3 bullets on planned next steps — e.g. content-based fallback scorer for sparse vectors, deeper analytics dashboard, exporting recommendations to a Spotify playlist, etc.]"
+    "text": "What I’d build next\n\nAdding Other Streaming Services: I would love to expand the user-base to other streaming services (i.e. Apple Music, Pandora, Amazon Music). I just chose to stick with Spotify as that is the service I use currently.\nAudio Feature Analytics: Spotify’s API used to provide audio feature statistics but they were removed a few years ago. If I could find a way to access them, I’d implement different visualizations and analyses that dive into a user’s audio profile.\nExporting Recommendations: Adding a feature that populates a Spotify playlist with the recommended artists’ tracks. This would allow users to skip the hastle of having to individually explore each recommended artist and would populate say 2-3 songs per artist recommended."
   },
   {
     "objectID": "projects/index.html",
     "href": "projects/index.html",
     "title": "Projects",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nNew Soundz — Spotify Analytics + Artist Recommender\n\n\n\nmachine-learning\n\nrecommender-systems\n\nweb-app\n\n\n\nA hybrid collaborative-filtering recommender that turns your Spotify listening history into personalized artist recommendations, deployed as a live Streamlit web app.\n\n\n\nMay 7, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nRail Weather Risk — Reproducible ML Pipeline\n\n\n\nmachine-learning\n\nregression\n\nreproducible-pipelines\n\n\n\nGroup project predicting monthly highway-rail grade crossing accidents from weather conditions, built as a fully reproducible DVC pipeline over 50 years of FRA and NOAA data.\n\n\n\nMar 16, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nPA Housing Affordability — Capstone Project\n\n\n\ntime-series\n\nforecasting\n\nreal-estate\n\n\n\nForecasting housing affordability across Pennsylvania’s Philadelphia, Pittsburgh, and Harrisburg metros through 2028 using ARIMA and XGBoost.\n\n\n\nApr 25, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nSong Popularity Machine Learning Final Project\n\n\n\nmachine-learning\n\nregression\n\n\n\nPredicting Spotify song popularity across pop, rock, and jazz by comparing eight regression and tree-based models.\n\n\n\nApr 2, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nMilwaukee Bucks Business Analytics Hackathon\n\n\n\nmachine-learning\n\nclassification\n\nsports-analytics\n\n\n\nThird-place finish predicting premium seating pricing tiers at the Milwaukee Bucks Business Analytics Hackathon.\n\n\n\nFeb 13, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nNew Soundz: Artist Recommendation Engine + Spotify Analytics\n\n\n\nmachine-learning\n\nrecommender-systems\n\nweb-app\n\n\n\nA hybrid collaborative-filtering recommender that turns your Spotify listening history into personalized artist recommendations, deployed as a live Streamlit web app.\n\n\n\nMay 7, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nRail Weather Risk — Reproducible ML Pipeline\n\n\n\nmachine-learning\n\nregression\n\nreproducible-pipelines\n\n\n\nGroup project predicting monthly highway-rail grade crossing accidents from weather conditions, built as a fully reproducible DVC pipeline over 50 years of FRA and NOAA data.\n\n\n\nMar 16, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nPA Housing Affordability — Capstone Project\n\n\n\ntime-series\n\nforecasting\n\nreal-estate\n\n\n\nForecasting housing affordability across Pennsylvania’s Philadelphia, Pittsburgh, and Harrisburg metros through 2028 using ARIMA and XGBoost.\n\n\n\nApr 25, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nSong Popularity Machine Learning Final Project\n\n\n\nmachine-learning\n\nregression\n\n\n\nPredicting Spotify song popularity across pop, rock, and jazz by comparing eight regression and tree-based models.\n\n\n\nApr 2, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nMilwaukee Bucks Business Analytics Hackathon\n\n\n\nmachine-learning\n\nclassification\n\nsports-analytics\n\n\n\nThird-place finish predicting premium seating pricing tiers at the Milwaukee Bucks Business Analytics Hackathon.\n\n\n\nFeb 13, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "projects/Song_popularity.html",
