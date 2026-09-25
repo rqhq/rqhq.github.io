@@ -3,7 +3,8 @@ title: "Weekly NFL Fantasy Point Projection"
 description: "Leakage-free weekly fantasy projections for QB/RB/WR/TE built end-to-end in PySpark over nine seasons of nflverse data."
 date: "2026-09-01"
 categories: [machine-learning, regression, pyspark, sports-analytics]
-image-alt: "Projected vs. actual per-game fantasy points by position, 2024"
+image: ../images/nfl-fantasy-thumb.png
+image-alt: "Fantasy football shield logo"
 format:
   html:
     code-fold: true
