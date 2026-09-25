@@ -1,0 +1,49 @@
+---
+title: "Weekly NFL Fantasy Point Projection"
+description: "Leakage-free weekly fantasy projections for QB/RB/WR/TE built end-to-end in PySpark over nine seasons of nflverse data."
+date: "2026-09-01"
+categories: [machine-learning, regression, pyspark, sports-analytics]
+image-alt: "Projected vs. actual per-game fantasy points by position, 2024"
+format:
+  html:
+    code-fold: true
+    code-tools: true
+---
+
+## Overview
+
+Solo final project for *DSCI 632* at Drexel. The goal: **project how many fantasy points an NFL skill player (QB, RB, WR, TE) will score in an upcoming game, using only information available before kickoff.**
+
+That constraint shapes the whole design. Fantasy points are a fixed linear function of a game's box score (verified to reconstruct exactly for all 49,161 player-games), so any same-week stat would be circular. Every feature comes from strictly prior games: rolling form and usage, plus an engineered opponent-strength feature built from play-by-play expected points added (EPA) allowed, split into pass and run defense.
+
+The pipeline pulls nine seasons (2016–2024) of raw nflverse Parquet files, harmonizes column types that drift across seasons, writes a season-partitioned Parquet lake, and runs all feature engineering, modeling, and evaluation in PySpark. Models are compared on a season-based split: train before 2023, validate on 2023, test on 2024.
+
+## Tech stack
+
+PySpark / Spark MLlib / Parquet / matplotlib / nflverse
+
+## Report
+
+<iframe src="../pdfs/nfl-fantasy-projection-report.pdf" width="100%" height="650px" style="border: 1px solid #ccc;"></iframe>
+
+[Download report](../pdfs/nfl-fantasy-projection-report.pdf)
+
+## Key findings
+
+**All three models converge on the held-out 2024 season, so the relationship is mostly linear.**
+
+| Model                  | RMSE  | R²    | Spearman |
+|------------------------|------:|------:|---------:|
+| Linear Regression      | **6.490** | **0.355** | **0.617** |
+| Gradient-Boosted Trees | 6.602 | 0.332 | 0.603    |
+| Random Forest          | 6.489 | 0.355 | —        |
+
+GBT fit training data better (R² 0.411) but dropped to 0.332 on test, which is overfitting. Random forest matched linear regression, so the simpler model wins.
+
+**The matchup feature adds real signal.** Season-to-date opponent EPA allowed ranks 4th of 43 features by importance. All three defensive windows land in the top 11, and longer windows rank higher (to-date 4th, 5-game 8th, 3-game 11th), which fits the EDA finding that defensive quality is a stable team trait once single-game noise averages out.
+
+**Ranking is much stronger than R² suggests.** Mean within-week Spearman is 0.617, and the model places an average of 7.25 of each position's actual top 10 in its own top 10 (QB 7, RB 9, WR 6, TE 7). Season-averaged projections correlate with actual output at r = 0.86–0.93 by position.
+
+**Where it misses.** Predictions shrink toward the mean, so stars get under-projected (Ja'Marr Chase: projected ~16.6/game, actual ~23.7). Misses cluster in breakout seasons and rookies with little history. Weekly points are zero-inflated and heavy-tailed, which caps single-week R².
+
+**Leakage checks.** Features come from an allowlist, not a denylist. The top feature-target correlation is 0.545 (5-game mean), nowhere near the ~1.0 a leaked box-score column would show, and the opponent join keeps the row count exactly (41,459 before and after).
